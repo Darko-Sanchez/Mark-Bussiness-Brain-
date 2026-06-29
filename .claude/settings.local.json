@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Users/marksanchez/.claude/plugins/cache/purely-personal-marketplace/ai-employee-bootcamp/4.6.0/skills/coo-morning-brief/references/ 2>/dev/null && ls \"/Users/marksanchez/Downloads/Bussiness Brain  copy/\" 2>/dev/null)",
+      "mcp__0f7388ff-abbe-4c22-89d7-a35e0e2febde__list_events",
+      "mcp__5f25bd83-1c40-4b25-a3a6-d32e2506bbaf__search_threads"
+    ]
+  }
+}
