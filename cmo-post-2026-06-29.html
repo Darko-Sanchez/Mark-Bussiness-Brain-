@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMO Daily Post · June 29, 2026 · Mark Sanchez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#030E33;
+    --primary-mid:#1a2a6c;
+    --accent:#D9AD53;
+    --accent-light:#E8C97A;
+    --white:#FFFFFF;
+    --off-white:#F8F7F5;
+    --gray:#E4E3E0;
+    --gray-text:#5b5b62;
+    --gray-light:#F2F1EE;
+    --good:#16A34A;
+    --r-md:14px;
+    --r-lg:22px;
+    --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.08);
+    --grad:linear-gradient(135deg,#030E33 0%,#1a2a6c 60%,#243380 100%);
+    --accent-grad:linear-gradient(135deg,#B8892E 0%,#D9AD53 50%,#E8C97A 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Rethink Sans',sans-serif;
+    background:
+      radial-gradient(70% 50% at 96% -8%, color-mix(in srgb,#D9AD53 10%,transparent),transparent 60%),
+      radial-gradient(55% 45% at 0% 8%, color-mix(in srgb,#030E33 7%,transparent),transparent 55%),
+      var(--off-white);
+    background-attachment:fixed;
+    color:#15151A;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .doc{max-width:860px;margin:0 auto;padding:34px 22px 70px;}
+
+  /* ── Header ── */
+  .ohead{
+    border-radius:var(--r-lg);padding:30px 34px;margin-bottom:24px;
+    color:#fff;background:var(--grad);
+    box-shadow:0 18px 52px rgba(3,14,51,.30);
+    position:relative;overflow:hidden;
+  }
+  .ohead::after{
+    content:"";position:absolute;width:300px;height:300px;
+    border-radius:50%;background:rgba(217,173,83,.10);
+    top:-150px;right:-90px;pointer-events:none;
+  }
+  .ohead::before{
+    content:"";position:absolute;width:180px;height:180px;
+    border-radius:50%;background:rgba(217,173,83,.07);
+    bottom:-70px;left:50px;pointer-events:none;
+  }
+  .ohead .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px;}
+  .ohead h1{font-size:clamp(22px,4vw,29px);font-weight:800;letter-spacing:-.02em;margin-bottom:4px;}
+  .ohead .d{font-size:13px;opacity:.72;}
+  .ohead .pill-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+  .meta-pill{
+    font-size:10px;font-weight:700;padding:4px 12px;
+    border-radius:var(--pill);
+    background:rgba(217,173,83,.16);color:var(--accent);
+    border:1px solid rgba(217,173,83,.28);
+    letter-spacing:.06em;text-transform:uppercase;
+  }
+
+  /* ── Section labels ── */
+  .sec{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gray-text);font-weight:700;
+    margin:28px 0 12px;padding-left:2px;
+  }
+
+  /* ── Cards ── */
+  .card{
+    background:#fff;border:1px solid var(--gray);
+    border-radius:var(--r-md);box-shadow:var(--sh);
+    padding:22px 26px;margin-bottom:16px;
+  }
+  .card.accent-left{border-left:4px solid var(--accent);}
+  .card h4{
+    font-size:11px;letter-spacing:.10em;text-transform:uppercase;
+    color:var(--gray-text);margin-bottom:16px;font-weight:700;
+  }
+
+  /* ── Warning banner ── */
+  .warn-banner{
+    background:rgba(217,173,83,.10);
+    border:1px solid rgba(217,173,83,.35);
+    border-radius:10px;padding:14px 18px;margin-bottom:22px;
+    font-size:13px;color:#6b4e15;
+    display:flex;gap:10px;align-items:flex-start;
+    line-height:1.55;
+  }
+  .warn-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+
+  /* ── Hooks ── */
+  .hooks-grid{display:flex;flex-direction:column;gap:10px;}
+  .hook-item{
+    padding:14px 18px;border-radius:10px;
+    background:var(--gray-light);border:1px solid var(--gray);
+    position:relative;
+  }
+  .hook-item.selected{
+    background:linear-gradient(135deg,rgba(3,14,51,.04) 0%,rgba(217,173,83,.09) 100%);
+    border:2px solid var(--accent);
+    box-shadow:0 4px 22px rgba(217,173,83,.18);
+  }
+  .hook-type{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gray-text);margin-bottom:6px;}
+  .hook-item.selected .hook-type{color:var(--accent);}
+  .hook-text{font-size:15px;line-height:1.55;color:#15151A;font-weight:500;}
+  .hook-item.selected .hook-text{font-weight:700;color:var(--primary);}
+  .selected-badge{
+    position:absolute;top:12px;right:14px;
+    font-size:10px;font-weight:700;padding:2px 9px;
+    border-radius:var(--pill);background:var(--accent);color:var(--primary);
+    letter-spacing:.05em;
+  }
+  .selection-reason{
+    margin-top:14px;padding:13px 16px;
+    background:rgba(3,14,51,.04);border-radius:8px;
+    font-size:13px;color:#444;line-height:1.55;
+    border-left:3px solid var(--accent);
+  }
+  .selection-reason strong{color:var(--primary);}
+
+  /* ── Post body ── */
+  .post-wrap{position:relative;}
+  .hook-highlight-label{
+    font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;
+  }
+  .post-hook-block{
+    background:linear-gradient(120deg,rgba(217,173,83,.18) 0%,rgba(217,173,83,.07) 100%);
+    border-radius:8px;padding:14px 16px;margin-bottom:16px;
+    border-left:3px solid var(--accent);
+  }
+  .post-hook-block p{font-size:17px;font-weight:700;color:var(--primary);line-height:1.55;}
+  .post-rest{font-size:15.5px;line-height:1.8;color:#15151A;white-space:pre-wrap;}
+  .post-footer-row{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:16px;padding-top:14px;border-top:1px solid var(--gray);
+    font-size:12px;color:var(--gray-text);
+  }
+  .char-pill{
+    font-size:11px;font-weight:700;padding:3px 11px;
+    border-radius:var(--pill);background:rgba(22,163,74,.10);color:var(--good);
+    border:1px solid rgba(22,163,74,.20);
+  }
+
+  /* ── Diagnostic ── */
+  .diag-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+  .diag-item{
+    padding:14px 16px;border-radius:10px;
+    background:var(--gray-light);border:1px solid var(--gray);
+  }
+  .diag-item.pass{
+    background:rgba(22,163,74,.06);
+    border-color:rgba(22,163,74,.25);
+  }
+  .diag-label{font-size:12px;font-weight:700;color:#15151A;margin-bottom:4px;}
+  .diag-item.pass .diag-label{color:#14532d;}
+  .diag-note{font-size:12px;color:var(--gray-text);line-height:1.5;}
+  .diag-item.pass .diag-note{color:#166534;}
+  .diag-score-bar{
+    background:var(--grad);border-radius:10px;
+    padding:18px 24px;display:flex;align-items:center;gap:18px;color:#fff;
+  }
+  .diag-score-bar .num{
+    font-size:44px;font-weight:800;letter-spacing:-.03em;
+    color:var(--accent);line-height:1;flex-shrink:0;
+  }
+  .diag-score-bar .verdict{font-size:14px;line-height:1.5;opacity:.95;}
+  .diag-score-bar .verdict strong{color:var(--accent);}
+
+  /* ── Pinned comments ── */
+  .comment-card{
+    background:#fff;border:1px solid var(--gray);
+    border-radius:var(--r-md);box-shadow:var(--sh);
+    padding:20px 26px;margin-bottom:12px;
+    position:relative;overflow:hidden;
+  }
+  .comment-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:var(--accent-grad);
+  }
+  .comment-num{
+    font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:10px;
+  }
+  .comment-text{font-size:15px;line-height:1.70;color:#15151A;}
+
+  /* ── Footer ── */
+  footer{
+    text-align:center;padding:32px 22px 10px;
+    color:var(--gray-text);font-size:12.5px;line-height:1.8;
+  }
+  footer b{color:#15151A;}
+  footer .dot{color:var(--accent);}
+  .color-swatches{display:flex;justify-content:center;gap:10px;margin-top:10px;}
+  .swatch{
+    display:flex;align-items:center;gap:6px;
+    font-size:11px;color:var(--gray-text);font-weight:600;
+  }
+  .swatch-dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.12);}
+
+  @media(max-width:640px){
+    .diag-grid{grid-template-columns:1fr;}
+    .ohead{padding:22px 20px;}
+    .card{padding:18px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- HEADER -->
+  <div class="ohead">
+    <div class="k">CMO Daily Post · LinkedIn</div>
+    <h1>Mark Sanchez · Unforgettable Hospitality</h1>
+    <div class="d">Monday, 29 June 2026 · Scheduled routine</div>
+    <div class="pill-row">
+      <span class="meta-pill">Pillar 3</span>
+      <span class="meta-pill">One-Person Dependency</span>
+      <span class="meta-pill">Story-Flow · Var. B</span>
+      <span class="meta-pill">Educating / Nurturing</span>
+      <span class="meta-pill">4 / 4 Invisible</span>
+    </div>
+  </div>
+
+  <!-- CALENDAR WARNING -->
+  <div class="warn-banner">
+    <span class="warn-icon">&#9888;</span>
+    <span>
+      <strong>No Notion MCP connected · No content calendar entry found for June 29.</strong>
+      Topic auto-selected from Messaging Pillar 3 — the highest-impact, least-used angle based on your content priority data in inbox-mark-sanchez.md.
+      Brand colors sourced from inbox-mark-sanchez.md (#030E33 navy, #D9AD53 gold) — no hex color was found in positioning-mark-sanchez.md.
+      Connect a Notion MCP to enable calendar-driven post selection going forward.
+    </span>
+  </div>
+
+  <!-- HOOKS -->
+  <div class="sec">Step 1 · 5 Hooks Generated</div>
+  <div class="card">
+    <h4>Hook candidates · Confession auto-selected as strongest</h4>
+    <div class="hooks-grid">
+
+      <div class="hook-item">
+        <div class="hook-type">Result Lead</div>
+        <div class="hook-text">I drove a 92% five-star rate at a restaurant. Three months after I left, it dropped to 59%. That's not a story about me. That's a story about what no system looks like.</div>
+      </div>
+
+      <div class="hook-item selected">
+        <span class="selected-badge">SELECTED</span>
+        <div class="hook-type">Confession</div>
+        <div class="hook-text">I thought I was just good at my job.<br>The reviews proved I was a liability.</div>
+      </div>
+
+      <div class="hook-item">
+        <div class="hook-type">Contrarian</div>
+        <div class="hook-text">The best thing that ever happened to that restaurant was me leaving. Here's what the data said the moment I was gone.</div>
+      </div>
+
+      <div class="hook-item">
+        <div class="hook-type">Curiosity Gap</div>
+        <div class="hook-text">After I left, negative reviews jumped 9x. My boss didn't need a new hire. He needed to read what he already had.</div>
+      </div>
+
+      <div class="hook-item">
+        <div class="hook-type">Pattern Interrupt</div>
+        <div class="hook-text">103 five-star reviews named me in a single quarter. That number should have scared them. It didn't.</div>
+      </div>
+
+    </div>
+    <div class="selection-reason">
+      <strong>Why Confession wins:</strong> It creates maximum tension in the fewest words. "Good at my job" signals pride; "liability" reverses it instantly. The cognitive dissonance forces the reader to the next line. Tighter than Result Lead, more personal than Contrarian, and doesn't telegraph the data before the hook has landed.
+    </div>
+  </div>
+
+  <!-- POST -->
+  <div class="sec">Step 2 · LinkedIn Post · Variation B · Story-Flow</div>
+  <div class="card accent-left">
+    <h4>Full post · written in Mark's voice from voice-dna-mark-sanchez.md</h4>
+
+    <div class="hook-highlight-label">Hook (highlighted)</div>
+    <div class="post-hook-block">
+      <p>I thought I was just good at my job.</p>
+      <p style="margin-top:6px;">The reviews proved I was a liability.</p>
+    </div>
+
+    <div class="post-rest">In my final quarter at Booty's Wings, guests named me in 103 five-star reviews. I was mentioned 20x more than the next closest person on staff.
+
+That felt like a win. It wasn't.
+
+Three months after I left, the five-star rate dropped from 92% to 59%. Negative reviews jumped from 2.9% to 26.6%. A 9x increase. Publicly. In the Google reviews anyone can look up right now.
+
+The owner didn't have a staffing problem after I left.
+
+He had a standards problem the whole time I was there.
+
+Here's what nobody in this industry says out loud: one strong performer isn't proof your restaurant works. It's proof your restaurant depends on that one person. And when they leave, the data tells the truth immediately.
+
+I'm not a unicorn. I tracked what I did. I documented it. Then I took the same approach to a second restaurant and the team started generating reviews before formal training ever started.
+
+That's not talent. That's a system. And systems can be built.
+
+If your guest experience walks out the door every time the right person ends their shift, that's not a hiring problem. That's a standards problem. And it's sitting right now in your public review history.
+
+If your best server left tomorrow, what would your review rate look like in 90 days?</div>
+
+    <div class="post-footer-row">
+      <span>Story-Flow · Var. B · Intent: Educating / Nurturing · Zero em dashes · Zero banned words</span>
+      <span class="char-pill">~1,344 chars</span>
+    </div>
+  </div>
+
+  <!-- DIAGNOSTIC -->
+  <div class="sec">Step 3 · Invisibility Diagnostic</div>
+  <div class="card">
+    <h4>Must reach 4/4 before delivery · Result: cleared first pass, no rewrite needed</h4>
+    <div class="diag-grid">
+      <div class="diag-item pass">
+        <div class="diag-label">&#10003; Voice</div>
+        <div class="diag-note">Short punchy peaks at emotional beats ("That felt like a win. It wasn't."), dry blunt humor ("I'm not a unicorn"), rhythm builds then releases, no jargon, no em dashes, no banned words from voice-dna doc. Grade 7-8 reading level.</div>
+      </div>
+      <div class="diag-item pass">
+        <div class="diag-label">&#10003; POV</div>
+        <div class="diag-note">Clear contrarian stance no competitor is making: a star performer's review dominance is a liability signal, not a win. Position is unique to Mark's documented data and directly challenges how owners interpret performance.</div>
+      </div>
+      <div class="diag-item pass">
+        <div class="diag-label">&#10003; Specificity</div>
+        <div class="diag-note">Named restaurant (Booty's Wings), precise numbers (103, 20x, 92%, 59%, 2.9%, 26.6%, 9x), specific time references ("final quarter," "three months"). Not a single generic claim or vague qualifier.</div>
+      </div>
+      <div class="diag-item pass">
+        <div class="diag-label">&#10003; Asking</div>
+        <div class="diag-note">Closing question forces the reader to self-assess in concrete terms: "If your best server left tomorrow, what would your review rate look like in 90 days?" Invites both reflection and comment.</div>
+      </div>
+    </div>
+    <div class="diag-score-bar">
+      <div class="num">4/4</div>
+      <div class="verdict">
+        Post clears the Invisibility Diagnostic on first pass.<br>
+        <strong>No rewrite required. Cleared for delivery.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- PINNED COMMENTS -->
+  <div class="sec">Step 4 · 3 Pinned Comments</div>
+
+  <div class="comment-card">
+    <div class="comment-num">Pinned Comment 1 · Extend — deepen the idea</div>
+    <div class="comment-text">The part that still gets me: the team was already starting to mirror the standard before I left. A few reviews started naming other staff members. The foundation was there. It just wasn't built into a system yet. That's the difference between a one-person result and a restaurant result. The data was showing it the whole time. Nobody was reading it.</div>
+  </div>
+
+  <div class="comment-card">
+    <div class="comment-num">Pinned Comment 2 · Humanise — the person behind the data</div>
+    <div class="comment-text">When I saw those numbers after I left, I wasn't angry. I was sad for them. Not because I wasn't there anymore. Because the fix was never about me. I could have built that standard into the culture if the engagement had gone further. The departure impact wasn't a surprise. It was a confirmation of everything I already knew was missing.</div>
+  </div>
+
+  <div class="comment-card">
+    <div class="comment-num">Pinned Comment 3 · CTA Amplifier — drive the next step</div>
+    <div class="comment-text">If you're a restaurant owner who wants to know what your review history is actually telling you, send me a DM. I'll walk you through how to read your own data. No pitch. Just the numbers. You might find out what your departure impact would look like before you ever have to find out the hard way.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <b>Unforgettable Hospitality</b> <span class="dot">·</span> Mark Sanchez <span class="dot">·</span> 29 June 2026<br>
+    Brand colors sourced from inbox-mark-sanchez.md (no hex found in positioning-mark-sanchez.md · default #E8294C not applied)
+    <div class="color-swatches">
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#030E33;"></div>
+        <span>#030E33 Navy</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#D9AD53;"></div>
+        <span>#D9AD53 Gold</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#FFFFFF;border-color:#ccc;"></div>
+        <span>#FFFFFF White</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
