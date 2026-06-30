@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COO Morning Brief — 2026-06-30</title>
+  <style>
+    :root {
+      --primary: #E8294C;
+      --bg: #0A0A0A;
+      --card: #141414;
+      --border: #1E1E1E;
+      --text: #F0F0F0;
+      --muted: #555;
+      --green: #22C55E;
+      --amber: #F59E0B;
+      --red: #EF4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      padding: 2.5rem 2rem;
+      max-width: 940px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left {}
+
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.7rem;
+      border-radius: 3px;
+      margin-bottom: 0.65rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .date-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tz-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      opacity: 0.4;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-icon {
+      width: 30px;
+      height: 30px;
+      background: rgba(232, 41, 76, 0.1);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .card-subtitle {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    /* ── STATUS PILL ── */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.55rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .green  { color: var(--green);  background: rgba(34,197,94,0.1); }
+    .green  .dot { background: var(--green); }
+    .amber  { color: var(--amber);  background: rgba(245,158,11,0.1); }
+    .amber  .dot { background: var(--amber); }
+    .red    { color: var(--red);    background: rgba(239,68,68,0.1); }
+    .red    .dot { background: var(--red); }
+    .muted-pill { color: var(--muted); background: rgba(255,255,255,0.05); }
+    .muted-pill .dot { background: var(--muted); }
+
+    /* ── EMPTY STATE ── */
+    .empty {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .connector-note {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.9rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-style: italic;
+    }
+
+    /* ── SCHEDULE ── */
+    .schedule-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-item:last-child { border-bottom: none; }
+
+    .sched-time {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      min-width: 72px;
+      padding-top: 2px;
+    }
+
+    .sched-body { flex: 1; }
+
+    .sched-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .sched-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .sched-link {
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.68rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .sched-status { flex-shrink: 0; padding-top: 2px; }
+
+    /* ── INBOX ── */
+    .inbox-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .inbox-item:last-child { border-bottom: none; }
+
+    .inbox-body { flex: 1; min-width: 0; }
+
+    .inbox-sender {
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .inbox-subject {
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .inbox-snippet {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .inbox-flag { flex-shrink: 0; padding-top: 3px; }
+
+    /* ── TASKS ── */
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-item:last-child { border-bottom: none; }
+
+    .task-check {
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .task-body { flex: 1; }
+    .task-name { font-size: 0.875rem; line-height: 1.35; }
+
+    .task-due {
+      font-size: 0.68rem;
+      color: var(--amber);
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    .task-due.red { color: var(--red); background: transparent; }
+    .task-due.green-text { color: var(--green); background: transparent; }
+
+    /* ── CONTENT SLOT ── */
+    .content-card {
+      background: rgba(232, 41, 76, 0.05);
+      border: 1px solid rgba(232, 41, 76, 0.18);
+      border-radius: 8px;
+      padding: 1.1rem 1.1rem 1rem;
+    }
+
+    .content-platform {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .content-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .content-hook {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
+
+    .content-cta {
+      margin-top: 0.75rem;
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── METRIC ── */
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .metric-block {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.45rem;
+      line-height: 1.4;
+    }
+
+    .metric-trend {
+      font-size: 0.65rem;
+      margin-top: 0.3rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .footer-brand {
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-left">
+      <div class="badge">COO Morning Brief</div>
+      <h1>Mark Sanchez</h1>
+      <div class="tagline">Stop managing your restaurant. Start owning it.</div>
+    </div>
+    <div class="header-right">
+      <div class="date-label">Monday, June 30, 2026</div>
+      <div class="tz-label">America/Phoenix · mksanchez509@gmail.com</div>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- ══ TODAY'S SCHEDULE ══ -->
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Today's Schedule</div>
+        <div class="card-subtitle">Google Calendar · Primary</div>
+      </div>
+
+      <div class="empty">
+        No events found on your Google Calendar for today.<br>
+        Your day is unblocked — claim the time before others do.
+      </div>
+
+      <!-- Bootcamp derived from inbox -->
+      <div class="schedule-item">
+        <div class="sched-time">~10:00 AM</div>
+        <div class="sched-body">
+          <div class="sched-title">AI Accelerator Session 3 — Bootcamp Day 3</div>
+          <div class="sched-meta">admin@danielpaul.ai · Derived from inbox reminders · Documents in Google Drive</div>
+        </div>
+        <div class="sched-status">
+          <span class="status amber"><span class="dot"></span>Prep Required</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ INBOX PRIORITIES ══ -->
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-icon">📬</div>
+        <div class="card-title">Inbox Priorities</div>
+        <div class="card-subtitle">Last 24h · Top 5</div>
+      </div>
+
+      <!-- 1 -->
+      <div class="inbox-item">
+        <div class="inbox-body">
+          <div class="inbox-sender">admin@danielpaul.ai · 8:00 AM · ACCELERATOR</div>
+          <div class="inbox-subject">ACCELERATOR SESSION - 3</div>
+          <div class="inbox-snippet">Reminder before today's session. Finish Bootcamp Day 3 documents and confirm connectors are installed before you join.</div>
+        </div>
+        <div class="inbox-flag">
+          <span class="status amber"><span class="dot"></span>Action</span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="inbox-item">
+        <div class="inbox-body">
+          <div class="inbox-sender">admin@danielpaul.ai · 9:07 AM</div>
+          <div class="inbox-subject">ONE HOUR TO GO</div>
+          <div class="inbox-snippet">Grab a coffee, open your Claude project, and have your completed Day 3 documents nearby. Documents link in email.</div>
+        </div>
+        <div class="inbox-flag">
+          <span class="status amber"><span class="dot"></span>Action</span>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="inbox-item">
+        <div class="inbox-body">
+          <div class="inbox-sender">admin@danielpaul.ai · 9:27 AM</div>
+          <div class="inbox-subject">30 minutes left — Bootcamp Day 3</div>
+          <div class="inbox-snippet">Starting in 30 minutes. Take one last look through your Bootcamp Day 3 documents and make sure everything is ready before you begin.</div>
+        </div>
+        <div class="inbox-flag">
+          <span class="status amber"><span class="dot"></span>Action</span>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="inbox-item">
+        <div class="inbox-body">
+          <div class="inbox-sender">danny@danielpaul.ai · 7:01 AM</div>
+          <div class="inbox-subject">You never leave level 1 of Claude.</div>
+          <div class="inbox-snippet">Here's the map we're working through together. If your Claude chat history is mostly one-off questions, you're using maybe 10% of what it can do.</div>
+        </div>
+        <div class="inbox-flag">
+          <span class="status green"><span class="dot"></span>Read</span>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="inbox-item">
+        <div class="inbox-body">
+          <div class="inbox-sender">timirae.lai@kwphilippines.com · 4:02 AM · IMPORTANT</div>
+          <div class="inbox-subject">Re: 10x with AI SG 3-Week Bootcamp Invitation</div>
+          <div class="inbox-snippet">LinkedIn profile reply to the AI SG Bootcamp calendar invite. Gmail marked IMPORTANT — part of a large group reply chain.</div>
+        </div>
+        <div class="inbox-flag">
+          <span class="status muted-pill"><span class="dot"></span>FYI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TASKS ══ -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">✅</div>
+        <div class="card-title">Tasks</div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-body">
+          <div class="task-name">Finish Bootcamp Day 3 documents</div>
+          <div class="task-due">Due today · Before AI session</div>
+        </div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-body">
+          <div class="task-name">Confirm MCP connectors installed &amp; working</div>
+          <div class="task-due">Due today · Pre-session check</div>
+        </div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-body">
+          <div class="task-name">Open Claude project before session starts</div>
+          <div class="task-due">Due today · 30 min before</div>
+        </div>
+      </div>
+
+      <p class="connector-note">Notion not connected — tasks sourced from inbox context.<br>Connect Notion to pull official task list.</p>
+    </div>
+
+    <!-- ══ CONTENT SLOT ══ -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">✍️</div>
+        <div class="card-title">Content Slot</div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-platform">Today's Post Angle · LinkedIn / Reels</div>
+        <div class="content-title">"The floor doesn't care how good your system looks on paper."</div>
+        <div class="content-hook">
+          You're in an AI accelerator session today. That's real. But on the other side of that — the tools only work if the standard already lives in the team. Booty's Wings: 92% five-star rate while I was there. 9x jump in negative reviews after I left. The system didn't hold. The standard didn't transfer. That's not a tech problem. One stat. Let it land.
+        </div>
+        <div class="content-cta">→ Draft now before the session starts</div>
+      </div>
+
+      <p class="connector-note">Notion not connected — no content calendar entry retrieved.<br>Content idea generated from inbox context &amp; brand voice.</p>
+    </div>
+
+    <!-- ══ KEY METRIC ══ -->
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Key Metric</div>
+        <div class="card-subtitle">Inbox &amp; Calendar Snapshot</div>
+      </div>
+
+      <div class="metric-row">
+        <div class="metric-block">
+          <div class="metric-number">15</div>
+          <div class="metric-label">Emails<br>Last 24h</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number">11</div>
+          <div class="metric-label">Unread<br>in Inbox</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number">0</div>
+          <div class="metric-label">Calendar<br>Events Today</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number">3</div>
+          <div class="metric-label">Action<br>Items Flagged</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <span>Generated by Claude · <span class="footer-brand">Unforgettable Hospitality</span></span>
+    <span>2026-06-30 · #E8294C · Brand: Default</span>
+  </footer>
+
+</body>
+</html>
