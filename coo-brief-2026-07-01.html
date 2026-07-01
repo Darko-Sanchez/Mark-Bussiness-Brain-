@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 1 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --black:#0A0A0A; --ink:#15151A; --white:#FFFFFF; --off-white:#F8F7F5;
+    --gray:#E4E3E0; --gray-text:#5b5b62; --gray-light:#F2F1EE;
+    --good:#16A34A; --warn:#D97706; --bad:#DC2626;
+    --r-md:14px; --r-lg:22px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:radial-gradient(80% 60% at 96% -12%, color-mix(in srgb,var(--primary) 14%, transparent), transparent 60%), radial-gradient(60% 50% at 0% 6%, color-mix(in srgb,var(--primary-light) 10%, transparent), transparent 55%), var(--black);background-attachment:fixed;color:#EDEDED;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 30%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.82;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9a9aa2;font-weight:700;margin:24px 0 12px;}
+  .card{background:#141416;border:1px solid #232326;border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa2;margin-bottom:12px;}
+  .lead{font-size:16px;line-height:1.6;color:#F1F1F1;}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:15px;border-bottom:1px solid #232326;}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:#9a9aa2;font-size:13px;width:74px;flex-shrink:0;}
+  .row .label{flex:1;min-width:0;color:#F1F1F1;}
+  .row .sub{font-size:12px;color:#9a9aa2;margin-top:1px;}
+  .tagi{font-size:11px;font-weight:700;padding:2px 9px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .t-red{background:#3a1414;color:#F5716F;} .t-amb{background:#3a2c10;color:#F0B24D;}
+  .t-grey{background:#232326;color:#9a9aa2;} .t-grn{background:#123321;color:#3FCE7E;} .t-blue{background:#12233a;color:#5B9EF0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:#141416;border:1px solid #232326;border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:#9a9aa2;}
+  .stat .n{font-size:34px;font-weight:800;letter-spacing:-.02em;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .delta{font-size:13px;font-weight:700;margin-top:2px;} .up{color:var(--good);} .down{color:var(--bad);}
+  .empty{font-size:14px;color:#9a9aa2;font-style:italic;padding:8px 0;}
+  .note{background:linear-gradient(135deg, #000 0%, color-mix(in srgb,var(--primary) 30%, #000) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.4);}
+  .note b{color:var(--primary-light);}
+  .badge-urgent{display:inline-block;font-size:11px;font-weight:700;background:#3a1414;color:#F5716F;padding:2px 8px;border-radius:var(--pill);margin-left:8px;vertical-align:middle;}
+  .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px;}
+  .mini div{background:#0f0f11;border:1px solid #232326;border-radius:10px;padding:12px 6px;text-align:center;}
+  .mini .num{font-size:20px;font-weight:800;color:#fff;}
+  .mini .lbl{font-size:10px;color:#9a9aa2;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+  footer{text-align:center;padding:30px 22px 10px;color:#6b6b72;font-size:13px;}
+  footer b{color:#EDEDED;}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}.mini{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body data-theme="dark">
+  <div class="doc">
+
+    <!-- HEADER -->
+    <div class="ohead">
+      <div class="k">COO · Morning brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Wednesday, 1 July 2026 · America/Phoenix · ran while you slept</div>
+    </div>
+
+    <!-- ONE LINE -->
+    <div class="card">
+      <h4>Today, in one line</h4>
+      <div class="lead">Calendar is wide open — no meetings today or this week. The real work is in your inbox: Apify stopped your running automations on usage limits, and Darko invited you into a Notion team space. Clear both before noon.</div>
+    </div>
+
+    <!-- CALENDAR + INBOX GRID -->
+    <div class="grid2">
+
+      <div class="card">
+        <h4>Today's Schedule</h4>
+        <div class="empty">Nothing on Google Calendar today — and nothing booked through July 8. Your day is unblocked. Protect it.</div>
+      </div>
+
+      <div class="card">
+        <h4>Inbox Priorities · 5 need you</h4>
+        <div class="row">
+          <div class="label">
+            <div>Apify: platform usage exceeded</div>
+            <div class="sub">hello@apify.com · running Actors were aborted</div>
+          </div>
+          <span class="tagi t-red">fix today</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Notion: invited to Darko's Space</div>
+            <div class="sub">notify@updates.notion.so · join your team</div>
+          </div>
+          <span class="tagi t-amb">respond</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Founder OS access is ready</div>
+            <div class="sub">admin@danielpaul.ai · quick registration steps</div>
+          </div>
+          <span class="tagi t-amb">respond</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Purely Personal: your account is ready</div>
+            <div class="sub">noreply@purelypersonal.ai · sent twice, confirm login</div>
+          </div>
+          <span class="tagi t-amb">review</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Revolut: $200.63 sent to Wang Shuhui Sharon</div>
+            <div class="sub">no-reply@revolut.com · confirm this was you</div>
+          </div>
+          <span class="tagi t-grey">verify</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TASKS + METRIC GRID -->
+    <div class="grid2">
+
+      <div class="card">
+        <h4>Tasks</h4>
+        <div class="row">
+          <div class="label">
+            <div>Restore or upgrade Apify usage plan</div>
+            <div class="sub">Automations are currently stopped</div>
+          </div>
+          <span class="tagi t-red">today</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Accept or decline Darko's Notion space invite</div>
+            <div class="sub">Team workspace join request</div>
+          </div>
+          <span class="tagi t-amb">today</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Complete Founder OS registration</div>
+            <div class="sub">Access is live, steps waiting</div>
+          </div>
+          <span class="tagi t-amb">today</span>
+        </div>
+        <div style="font-size:12px;color:#9a9aa2;margin-top:10px;">Notion tasks not connected — this list is sourced from your inbox. Connect Notion to pull your full task list and real due dates.</div>
+      </div>
+
+      <div class="stat">
+        <div class="l">Key metric · Inbox &amp; Calendar snapshot</div>
+        <div class="mini">
+          <div><div class="num">52</div><div class="lbl">Emails 24h</div></div>
+          <div><div class="num">46</div><div class="lbl">Unread</div></div>
+          <div><div class="num">0</div><div class="lbl">Events today</div></div>
+          <div><div class="num">5</div><div class="lbl">Flagged</div></div>
+        </div>
+        <div class="delta" style="color:#9a9aa2;font-weight:400;font-size:13px;margin-top:10px;">No business KPI configured yet. Set one number to track this week (revenue, DMs sent, connection requests) and paste it here tomorrow morning.</div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="card">
+      <h4>Content Slot</h4>
+      <div class="lead" style="font-size:15px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa2;margin-bottom:8px;">Suggested angle · Pillar 4 · LinkedIn / Reels</div>
+        <div style="font-weight:700;margin-bottom:6px;">"This industry doesn't have to suck the life out of you."</div>
+        <div>Yesterday's post covered Pillar 3 — dependency risk. Rotate to Pillar 4 today: the belief that hospitality has to cost owners their life outside of work. Anchor it in one real story from the floor, one stat, and the reframe that a real system gives the owner their life back.</div>
+      </div>
+      <div style="font-size:12px;color:#9a9aa2;margin-top:10px;">Notion content calendar not connected — this angle is inferred from your messaging pillars, not a scheduled entry. Connect Notion to pull today's actual content calendar slot.</div>
+    </div>
+
+    <!-- CLOSING NOTE -->
+    <div class="note">
+      One thing to move the needle today: <b>fix the Apify usage limit first.</b> Everything else on this brief can wait a few hours — a stalled automation compounds the longer it sits unattended.
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. · <b>Built by Daniel Paul · Purely Personal</b></footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('load',function(){
+      if(!window.gsap)return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.ohead',{y:26,opacity:0,scale:.98,duration:.7,ease:'power3.out'});
+      gsap.from('.ohead h1',{y:14,opacity:0,duration:.7,delay:.12,ease:'power3.out'});
+      gsap.from('.card,.stat,.note',{y:20,opacity:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.doc',start:'top 85%'}});
+    });
+  </script>
+</body>
+</html>
