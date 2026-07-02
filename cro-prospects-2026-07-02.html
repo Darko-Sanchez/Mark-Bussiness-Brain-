@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRO Weekly Prospects · July 2 · Unforgettable Hospitality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --bg:#0A0A0A; --panel:#15151A; --panel2:#1B1B21; --white:#FFFFFF;
+    --border:#2A2A31; --text:#F2F1EE; --text-dim:#A6A5AC; --text-dim2:#7A7A82;
+    --good:#22C55E; --warn:#D97706; --bad:#EF4444; --cold:#4A86E8;
+    --r-md:14px; --r-lg:20px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.5);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:
+    radial-gradient(70% 50% at 92% -8%, color-mix(in srgb,var(--primary) 20%, transparent), transparent 60%),
+    radial-gradient(55% 45% at 4% 4%, color-mix(in srgb,var(--primary-light) 10%, transparent), transparent 55%),
+    var(--bg);
+    background-attachment:fixed;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:900px;margin:0 auto;padding:34px 22px 80px;}
+
+  .ohead{border-radius:var(--r-md);padding:28px 30px;margin-bottom:24px;color:#fff;background:var(--grad);box-shadow:0 18px 46px color-mix(in srgb,var(--primary) 35%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08);top:-130px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;margin:6px 0 4px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);font-weight:700;margin:30px 0 14px;display:flex;align-items:center;gap:10px;}
+  .sec::after{content:"";flex:1;height:1px;background:var(--border);}
+
+  .stripband{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px;}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh);padding:16px 18px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;}
+  .stat .n{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:6px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  .note-box{background:var(--panel2);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--r-md);padding:16px 20px;font-size:14px;color:var(--text-dim);margin-bottom:6px;}
+  .note-box b{color:var(--text);}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);padding:22px 24px;margin-bottom:18px;}
+  .pcard-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+  .pname{font-size:19px;font-weight:800;letter-spacing:-.01em;}
+  .prole{font-size:13.5px;color:var(--text-dim);margin-top:3px;}
+  .prole a{color:var(--primary-light);text-decoration:none;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;}
+  .badge{font-size:11px;font-weight:700;padding:5px 11px;border-radius:var(--pill);white-space:nowrap;letter-spacing:.02em;}
+  .b-fit{background:color-mix(in srgb, var(--primary) 22%, transparent);color:var(--primary-light);border:1px solid color-mix(in srgb, var(--primary) 45%, transparent);}
+  .b-cold{background:color-mix(in srgb, var(--cold) 20%, transparent);color:#8fb4f0;border:1px solid color-mix(in srgb, var(--cold) 45%, transparent);}
+  .b-style{background:var(--panel2);color:var(--text-dim);border:1px solid var(--border);}
+  .b-open{background:color-mix(in srgb, var(--primary-light) 16%, transparent);color:#f3a2b3;border:1px solid color-mix(in srgb, var(--primary-light) 35%, transparent);}
+
+  .hook{font-size:15px;line-height:1.55;background:var(--panel2);border-radius:12px;padding:14px 16px;margin-bottom:16px;border-left:3px solid var(--primary-light);}
+  .hook b{color:var(--primary-light);font-size:11px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:5px;}
+
+  .seq{display:grid;gap:10px;}
+  .msg{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:13px 16px;}
+  .msg .mh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+  .msg .mtag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--primary-light);}
+  .msg .mtime{font-size:11px;color:var(--text-dim2);}
+  .msg .mbody{font-size:14px;color:var(--text);line-height:1.55;}
+
+  .foot-note{font-size:12px;color:var(--text-dim2);margin-top:10px;font-style:italic;}
+
+  .deal-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .deal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .deal-title{font-size:16px;font-weight:800;}
+  .p1{background:color-mix(in srgb, var(--bad) 22%, transparent);color:#ff8a8a;border:1px solid color-mix(in srgb, var(--bad) 45%, transparent);}
+  .p2{background:color-mix(in srgb, var(--warn) 22%, transparent);color:#f0b45e;border:1px solid color-mix(in srgb, var(--warn) 45%, transparent);}
+  .p3{background:var(--panel2);color:var(--text-dim);border:1px solid var(--border);}
+  .deal-body{font-size:14px;color:var(--text-dim);margin-bottom:10px;}
+  .deal-msg{background:var(--panel2);border-radius:10px;padding:12px 14px;font-size:14px;border-left:3px solid var(--primary-light);}
+  .deal-msg b{color:var(--primary-light);font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:5px;}
+
+  footer{text-align:center;padding:34px 22px 10px;color:var(--text-dim2);font-size:13px;}
+  footer b{color:var(--text);}
+
+  @media(max-width:640px){.stripband{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+  <div class="doc">
+
+    <div class="ohead">
+      <div class="k">CRO · Weekly Prospects</div>
+      <h1>10 prospects, sequenced. One deal, moved forward.</h1>
+      <div class="d">Thursday, 2 July 2026 · Unforgettable Hospitality · ran while you slept</div>
+    </div>
+
+    <div class="stripband">
+      <div class="stat"><div class="l">Prospects found</div><div class="n">10</div></div>
+      <div class="stat"><div class="l">Avg fit score</div><div class="n">6.4/10</div></div>
+      <div class="stat"><div class="l">Temperature</div><div class="n" style="font-size:20px;">10 Cold</div></div>
+      <div class="stat"><div class="l">Active deals in pipeline</div><div class="n" style="font-size:20px;">1</div></div>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">
+      <b>Data honesty note:</b> the 10 prospects below came from a public LinkedIn people-search (Apify, no login) matched against your ICP roles &#8212; independent owner/operators and restaurant-group GMs/operations directors. That data source does not expose post activity, so <b>every prospect is marked Cold</b> and Human Hooks are built only from verified public facts (name, title, restaurant, location) &#8212; nothing below references a post or signal that doesn't actually exist. Notion has no deals/CRM database connected yet, so pipeline triage below is pulled from your Business Inbox doc instead, and it's thin: one real deal, no synthetic ones added.
+    </div>
+
+    <div class="sec">10 Prospects</div>
+
+    <!-- PROSPECT 1 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Sam Namouz</div>
+          <div class="prole">Owner &middot; Sam's Gyro and Shish Kebab &middot; Clemson, SC &middot; <a href="https://www.linkedin.com/in/sam-namouz-640111215" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Driver</span>
+          <span class="badge b-open">Peer Opener</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Sam's Gyro and Shish Kebab runs on one owner in Clemson, every single shift.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Sam, twenty years on restaurant floors here too. Sam's Gyro and Shish Kebab running under your own name in Clemson caught my eye, that's a specific kind of pressure. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Sam, curious how you handle it when you're not on the floor. A one-name, one-location spot lives and dies on who's working that shift. What happens on your night off?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">Been tracking this exact pattern across two restaurants I worked in, when the strongest person on the floor steps away, the standard drops fast if it's not built into the team. Happy to send you the actual numbers, would that be worth a look?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Sam: when guests leave reviews for Sam's Gyro, do they name you specifically or just say "good food"? That one detail says more about your team than almost anything else.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No worries either way, Sam. If the owner-dependency thing ever becomes the priority, I'm around and happy to swap notes. Good luck with Sam's Gyro.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 2 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Sam Schnoebelen</div>
+          <div class="prole">Owner &middot; Evelyn Rose &middot; McLean, VA &middot; <a href="https://www.linkedin.com/in/sam-schnoebelen-400518308" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Expressive</span>
+          <span class="badge b-open">Peer Opener</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Evelyn Rose in McLean is named like a person, run like one too.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Sam, spent 20 years on restaurant floors before consulting. Evelyn Rose carrying a name like that in McLean says you built something with real intention. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Sam, a restaurant named like a person usually means the owner is the whole experience. What happens at Evelyn Rose on the nights you're not there?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I've tracked this exact question across two restaurants, what happens to the guest experience the moment the strongest person on the floor steps back. The data is pretty stark. Want me to send it over?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different angle, Sam. Do your regulars ask for you by name when they come in? That single fact tells you whether Evelyn Rose runs on a system or runs on you.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No pressure either way, Sam. If building a standard that doesn't depend on you ever becomes the priority, happy to compare notes. Wishing Evelyn Rose a great season.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 3 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Sam Kogos</div>
+          <div class="prole">Owner &middot; Riverbend Restaurant &middot; St. Louis, MO &middot; <a href="https://www.linkedin.com/in/sam-kogos-a472408a" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Amiable</span>
+          <span class="badge b-open">Peer Opener</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Riverbend Restaurant in St. Louis has Sam's name nowhere on it, but everywhere in it.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Sam, 20 years working restaurant floors myself. Riverbend Restaurant staying independent in St. Louis this long says something about how you run it. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Sam, independent spots that last usually have one person holding the whole standard together. Who runs the floor at Riverbend when you're not in the building?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I tracked exactly this across two restaurants I worked in, what happens to reviews and guest language when the owner steps back. Happy to send you the real numbers, would that be useful?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Sam. When someone leaves Riverbend a great review, do they name a person or just the food? That answer says more than most audits would.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">All good either way, Sam. If keeping Riverbend running strong without it depending on you becomes the focus, I'm around. Here's to many more years for Riverbend.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 4 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Sam Habesyan</div>
+          <div class="prole">Owner &middot; Samos Cafe &amp; Grill &middot; Los Angeles, CA &middot; <a href="https://www.linkedin.com/in/sam-habesyan-498062298" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Expressive</span>
+          <span class="badge b-open">Peer Opener</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Samos Cafe &amp; Grill in LA is Sam's name in the title, Sam's floor every night.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Sam, 20 years on restaurant floors before I started consulting. Samos Cafe &amp; Grill carrying your name in LA, that's not a small commitment. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Sam, a cafe with your name on it usually means you're the standard guests come back for. What does a shift at Samos look like on the days you're not there?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I've tracked this exact pattern across two restaurants, what happens to guest experience the moment the strongest person steps off the floor. Happy to send you the actual before-and-after numbers, want them?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question for you, Sam. Do guests ask for you specifically at Samos, or do they just say the food was good? That's the whole ballgame right there.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No worries, Sam. If building a Samos standard that runs without you in the room becomes a priority, happy to swap notes anytime. Best of luck with the cafe.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 5 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Sam Darsinos</div>
+          <div class="prole">Co-Owner &middot; Darfons Restaurant &amp; Lounge &middot; Nashville, TN &middot; <a href="https://www.linkedin.com/in/sam-darsinos-11464620" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 6/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Expressive</span>
+          <span class="badge b-open">Pattern Interrupt</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Co-owns Darfons Restaurant &amp; Lounge in Nashville, splitting a floor that never splits evenly.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Sam, quick one: co-owning Darfons Restaurant &amp; Lounge means two people have to agree on what "good service" looks like every night. That's a harder problem than most owners admit. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Sam, co-ownership is its own animal, two standards trying to become one. When you and your partner disagree on how a shift went, who usually wins that call?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">Tracked this exact tension across two restaurants, not co-owned, but same root issue: whose version of "good service" becomes the actual standard. Happy to send you what the data showed, interested?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Sam. Does Darfons feel the same on your night off as your partner's night off? Most co-owned places don't, and that gap is where the real work usually is.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No pressure, Sam. If getting Darfons onto one shared standard ever becomes the priority, I'd enjoy comparing notes with you and your partner. Good luck out there.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 6 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">John Mauro</div>
+          <div class="prole">Restaurant Owner &middot; Greater Chicago Area &middot; <a href="https://www.linkedin.com/in/john-mauro-9768aa50" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 6/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Driver</span>
+          <span class="badge b-open">Peer Opener</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Owns a restaurant in Chicago with no second location and no second-in-command yet.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey John, 20 years on restaurant floors before consulting. Owning a restaurant in Chicago without a second location yet means you're probably still the whole operation. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">John, when it's just you running the show, the restaurant's standard usually lives in your head, not on paper. What happens on the nights you can't be there?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I tracked this exact question across two restaurants I worked in myself, what happens the moment the strongest person on the floor steps back. Happy to send you the real before-and-after numbers, want a look?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, John. If you took a week off tomorrow, would the reviews stay the same? Most owners already know the answer before they finish reading this.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">All good either way, John. If building something that runs without you in the room becomes the priority, I'm around. Wishing you a strong season.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 7 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">John Salmons</div>
+          <div class="prole">Retired NBA Player &middot; Owner, Stone Fire Pizza by Midici &middot; Bryn Mawr, PA &middot; <a href="https://www.linkedin.com/in/john-salmons-98149768" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Driver</span>
+          <span class="badge b-open">Pattern Interrupt</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Played in the NBA, now owns Stone Fire Pizza by Midici and learns a new floor.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey John, not going to pretend I know pro basketball, but I know restaurants. Going from the NBA into running Stone Fire Pizza is a completely different kind of pressure. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">John, you spent a career being coached on performance under pressure. Who's coaching the floor performance at Stone Fire Pizza now that it's your name on the door?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I've tracked what happens to a restaurant's standard when the strongest person on the floor steps back, across two places I worked in myself. Happy to send you the actual data, would that be useful for Stone Fire?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, John. In basketball the stats tell the real story even when the game felt different. Does Stone Fire have a version of that yet, something besides gut feel?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No worries either way, John. If building a real standard at Stone Fire Pizza ever becomes the priority, I'd genuinely enjoy that conversation. Good luck with the new venture.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 8 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Robert Perez</div>
+          <div class="prole">Director of Restaurant Operations &middot; Brame Brands (Fatburger) &middot; San Antonio, TX &middot; <a href="https://www.linkedin.com/in/robert-perez-4533733ab" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 5/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Analytical</span>
+          <span class="badge b-open">Authority Flip</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Runs operations across Brame Brands' Fatburger locations, where consistency depends on who's on shift.</div>
+      <div class="foot-note" style="margin:-8px 0 14px;">Fit flagged lower &#8212; multi-unit franchise ops can skew toward "scalable, system-only" buyers, which the positioning doc explicitly names as a poor fit. Worth a qualifying question before Message 3.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Robert, 20 years on restaurant floors before I started consulting on guest experience. Running ops across multiple Fatburger locations for Brame Brands is a consistency problem most people underestimate. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Robert, most multi-unit operators solve consistency with SOPs and checklists. What's your read on the locations where the checklist is followed perfectly but the guest still doesn't feel it?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I've got two restaurants worth of data on exactly that gap, where operations were sound but guest experience still varied by who was on shift. Happy to send it over, want to see it?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Robert. Across your Fatburger locations, does one store consistently outperform the others in reviews for the same menu and same training? If yes, that gap is rarely about training.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No pressure, Robert. If closing that store-to-store guest experience gap ever becomes a priority, I'd welcome the conversation. Good luck scaling the Brame Brands locations.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 9 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Robert Williams</div>
+          <div class="prole">Director of Restaurant Operations &middot; Stan Clark Companies &middot; Stillwater, OK &middot; <a href="https://www.linkedin.com/in/robert-williams-333601117" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 5/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Analytical</span>
+          <span class="badge b-open">Authority Flip</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Directs restaurant operations for Stan Clark Companies, standardizing a brand across multiple Stillwater floors.</div>
+      <div class="foot-note" style="margin:-8px 0 14px;">Same flag as Robert Perez &#8212; multi-unit ops role, verify appetite for floor-level presence (not just systems) before pushing past M2.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Robert, spent 20 years on restaurant floors before consulting. Standardizing operations across multiple Stan Clark Companies locations in Stillwater is a real test of what actually transfers between teams. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Robert, operations manuals can make every location look the same on paper. Where do you see the biggest gap between what's written in the manual and what guests actually feel?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I've tracked this exact gap, ops that are technically correct but guest experience that still depends on who's working, across two restaurants. Happy to send you the real numbers, interested?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Robert. If you pulled reviews from your strongest Stan Clark location and your weakest, would the difference be training or something else entirely? Most operators are surprised by the answer.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">All good either way, Robert. If closing that location-to-location gap becomes a priority, I'd enjoy trading notes. Good luck with the Stillwater operations.</div></div>
+      </div>
+    </div>
+
+    <!-- PROSPECT 10 -->
+    <div class="card">
+      <div class="pcard-head">
+        <div>
+          <div class="pname">Maria Conrow</div>
+          <div class="prole">General Manager &middot; River Rock Restaurant &amp; Marina Bar &middot; Farmingdale, NJ &middot; <a href="https://www.linkedin.com/in/maria-conrow-1b9b2766" target="_blank">LinkedIn &rarr;</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge b-fit">Fit 7/10</span>
+          <span class="badge b-cold">Cold</span>
+          <span class="badge b-style">Amiable</span>
+          <span class="badge b-open">Directness Play</span>
+        </div>
+      </div>
+      <div class="hook"><b>Human Hook</b>Manages River Rock Restaurant &amp; Marina Bar in Farmingdale, holding the standard every single shift.</div>
+      <div class="seq">
+        <div class="msg"><div class="mh"><span class="mtag">M1 &middot; Connection</span><span class="mtime">Day 0</span></div><div class="mbody">Hey Maria, 20 years on restaurant floors before consulting. Running River Rock Restaurant &amp; Marina Bar means juggling a restaurant and a bar crowd under one standard, that's not easy. Worth connecting?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M2 &middot; Icebreaker</span><span class="mtime">Day 0&ndash;1</span></div><div class="mbody">Maria, marina bars pull a different crowd than the dining room, but guests expect the same standard from both. Which side of River Rock is harder to keep consistent right now?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M3 &middot; Value Bridge</span><span class="mtime">Day 2&ndash;3</span></div><div class="mbody">I tracked exactly this, what happens to guest experience when it depends on one strong person holding two different rooms together, across two restaurants I worked in. Happy to send you the numbers, want them?</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M4 &middot; The Pivot</span><span class="mtime">Day 3&ndash;4</span></div><div class="mbody">Different question, Maria. On a night you're pulled between the bar and the dining room, which one gets the better version of you? Most GMs already know the answer.</div></div>
+        <div class="msg"><div class="mh"><span class="mtag">M5 &middot; Clean Exit</span><span class="mtime">Day 5&ndash;7</span></div><div class="mbody">No worries either way, Maria. If building a standard that holds in both rooms without you splitting yourself becomes the priority, I'm around. Good luck out on the water this season.</div></div>
+      </div>
+    </div>
+
+    <div class="sec">Pipeline Triage</div>
+
+    <div class="deal-card">
+      <div class="deal-head">
+        <div class="deal-title">Zeta's Grill &middot; consulting contract</div>
+        <span class="badge p1">Priority 1</span>
+      </div>
+      <div class="deal-body">Status: documents sent, contact confirmed receipt. This is the furthest-along deal in the whole brain &#8212; 12 weeks of tracked results already live there. The ball is in your court to name the next step. Source: Business Inbox doc + June 29 COO brief (Notion has no deals database connected, so this is pulled from your own files, not fabricated).</div>
+      <div class="deal-msg"><b>Next-Action DM</b>Hey Msadek, glad the documents landed. Only thing left now is picking a start date. Does this week or next work better for you?</div>
+    </div>
+
+    <div class="deal-card" style="border-left-color:var(--warn);">
+      <div class="deal-head">
+        <div class="deal-title">Singapore target accounts</div>
+        <span class="badge p3">Priority 3</span>
+      </div>
+      <div class="deal-body">Lo &amp; Behold Group &middot; Atlas Bar &middot; Marina Bay Sands &middot; Mandarin Oriental Singapore. These are named targets from your Business Inbox doc for the planned Singapore relocation, not active conversations. No outreach has started. Flagging so they don't get lost, not generating DMs yet since there's no contact or context to personalize against.</div>
+    </div>
+
+    <div class="note-box">
+      <b>Why the pipeline looks thin:</b> Notion isn't wired up as a CRM yet for Unforgettable Hospitality &#8212; the connected workspace has no deals or client tracker. Everything in this section came from <code>inbox-mark-sanchez.md</code> and past COO briefs instead. Worth setting up a real deals database in Notion so next week's triage has more to work with than one thread and a wishlist.
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. &middot; <b>Built by Daniel Paul &middot; Purely Personal</b></footer>
+  </div>
+</body>
+</html>
