@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 2 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --bg:#0A0A0A; --surface:#141416; --surface-2:#1B1B1F; --border:#2A2A2F;
+    --text:#F5F4F2; --text-dim:#A7A6AC; --text-faint:#6F6E76;
+    --good:#22C55E; --warn:#F59E0B; --bad:#EF4444;
+    --r-md:14px; --r-lg:22px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.5),0 12px 32px rgba(0,0,0,.45);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:radial-gradient(80% 55% at 96% -10%, color-mix(in srgb,var(--primary) 16%, transparent), transparent 60%), radial-gradient(60% 45% at 0% 4%, color-mix(in srgb,var(--primary-light) 8%, transparent), transparent 55%), var(--bg);background-attachment:fixed;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 35%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.88;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);font-weight:700;margin:24px 0 12px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;}
+  .lead{font-size:16px;line-height:1.6;color:var(--text);}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:15px;border-bottom:1px solid var(--surface-2);}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:var(--text-dim);font-size:13px;width:78px;flex-shrink:0;}
+  .row .label{flex:1;min-width:0;color:var(--text);}
+  .row .label a{color:inherit;text-decoration:underline;text-decoration-color:var(--text-faint);}
+  .row .sub{font-size:12px;color:var(--text-dim);margin-top:1px;}
+  .tagi{font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .t-red{background:rgba(239,68,68,.14);color:var(--bad);} .t-amb{background:rgba(245,158,11,.14);color:var(--warn);}
+  .t-grey{background:var(--surface-2);color:var(--text-dim);} .t-grn{background:rgba(34,197,94,.14);color:var(--good);} .t-blue{background:rgba(59,130,246,.14);color:#60A5FA;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:var(--text-dim);}
+  .stat .n{font-size:34px;font-weight:800;letter-spacing:-.02em;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .delta{font-size:13px;font-weight:700;margin-top:2px;} .up{color:var(--good);} .down{color:var(--bad);}
+  .empty{font-size:14px;color:var(--text-dim);font-style:italic;padding:8px 0;}
+  .note{background:linear-gradient(135deg, #000 0%, color-mix(in srgb,var(--primary) 30%, #000) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.5);border:1px solid color-mix(in srgb,var(--primary) 40%, var(--border));}
+  .note b{color:var(--primary-light);}
+
+  footer{text-align:center;padding:30px 22px 10px;color:var(--text-faint);font-size:13px;}
+  footer b{color:var(--text-dim);}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body data-theme="dark">
+  <div class="doc">
+
+    <!-- HEADER -->
+    <div class="ohead">
+      <div class="k">COO · Morning brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Thursday, 2 July 2026 · America/Phoenix · ran while you slept</div>
+    </div>
+
+    <!-- ONE LINE -->
+    <div class="card">
+      <h4>Today, in one line</h4>
+      <div class="lead">Calendar is wide open through July 9. Two things to close out this morning: confirm the LinkedIn password reset was you, and decide whether to keep the LemonSlice subscription that renewed yesterday.</div>
+    </div>
+
+    <!-- SCHEDULE + INBOX GRID -->
+    <div class="grid2">
+
+      <div class="card">
+        <h4>Today's Schedule</h4>
+        <div class="empty">Nothing on Google Calendar today. Nothing booked through July 9 either — protect the space.</div>
+      </div>
+
+      <div class="card">
+        <h4>Inbox Priorities · 5 flagged</h4>
+        <div class="row">
+          <div class="label">
+            <div>LinkedIn password reset + PIN sent</div>
+            <div class="sub">security-noreply@linkedin.com · 8:28–8:29 PM Jul 1</div>
+          </div>
+          <span class="tagi t-red">verify it was you</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>LemonSlice renewed via Stripe</div>
+            <div class="sub">Receipt #2502-1140 · charged overnight</div>
+          </div>
+          <span class="tagi t-amb">confirm / cancel</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>10X AI Bonus Session — final session ran</div>
+            <div class="sub">admin@danielpaul.ai · series complete, no action</div>
+          </div>
+          <span class="tagi t-grey">fyi</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Credit monitoring summaries</div>
+            <div class="sub">Bank of America + TransUnion · routine, review if curious</div>
+          </div>
+          <span class="tagi t-grey">fyi</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>~47 promo / newsletter emails</div>
+            <div class="sub">AppSumo, Puma, Netflix, Spotify, Verizon and similar · no action</div>
+          </div>
+          <span class="tagi t-grey">noise</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TASKS + METRIC GRID -->
+    <div class="grid2">
+
+      <div class="card">
+        <h4>Tasks</h4>
+        <div class="row">
+          <div class="label">
+            <div>Verify the LinkedIn password reset</div>
+            <div class="sub">If it wasn't you, secure the account now</div>
+          </div>
+          <span class="tagi t-red">today</span>
+        </div>
+        <div class="row">
+          <div class="label">
+            <div>Decide: keep or cancel LemonSlice</div>
+            <div class="sub">Already renewed — next chance to cancel is before the next cycle</div>
+          </div>
+          <span class="tagi t-amb">today</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-dim);margin-top:10px;">Notion isn't connected in this session — connect it to pull your full due/overdue task list automatically.</div>
+      </div>
+
+      <div class="stat">
+        <div class="l">Key metric</div>
+        <div class="n" style="font-size:22px;margin-top:8px;color:var(--text-dim);-webkit-background-clip:unset;background-clip:unset;background:none;">Not set yet</div>
+        <div class="delta" style="color:var(--text-dim);font-weight:400;font-size:13px;margin-top:8px;">No Stripe revenue activity or connected metric found for this period. Pick one number to track this week and paste it here tomorrow.</div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="card">
+      <h4>Content Slot</h4>
+      <div class="empty">No content calendar connected. Connect Notion to pull today's scheduled post/content entry automatically.</div>
+    </div>
+
+    <!-- CLOSING NOTE -->
+    <div class="note">
+      One thing to move the needle today: <b>open the LinkedIn security email and confirm that reset was you.</b> It happened overnight with no calendar activity to explain it. Everything else in this brief — including the LemonSlice call — can wait until this afternoon.
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. · <b>Built by Daniel Paul · Purely Personal</b></footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('load',function(){
+      if(!window.gsap)return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.ohead',{y:26,opacity:0,scale:.98,duration:.7,ease:'power3.out'});
+      gsap.from('.ohead h1',{y:14,opacity:0,duration:.7,delay:.12,ease:'power3.out'});
+      gsap.from('.card,.stat,.note',{y:20,opacity:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.doc',start:'top 85%'}});
+    });
+  </script>
+</body>
+</html>
