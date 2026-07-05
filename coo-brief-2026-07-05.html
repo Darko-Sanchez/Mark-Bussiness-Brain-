@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 5 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Rethink+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-dark:#C4203D; --primary-light:#F5607A; --primary-rgb:232,41,76;
+    --bg:#0A0A0A; --bg-card:#111111; --bg-card-2:#181818;
+    --border:rgba(255,255,255,0.07); --border-2:rgba(255,255,255,0.13);
+    --text:#FFFFFF; --text-2:rgba(255,255,255,0.58); --text-3:rgba(255,255,255,0.28);
+    --green:#22C55E; --green-bg:rgba(34,197,94,0.10);
+    --amber:#F59E0B; --amber-bg:rgba(245,158,11,0.10);
+    --red:#EF4444; --red-bg:rgba(239,68,68,0.10);
+    --font-display:'Playfair Display', Georgia, serif;
+    --font-body:'Rethink Sans', system-ui, sans-serif;
+    --font-mono:'DM Mono', monospace;
+    --r-sm:8px; --r-md:16px; --r-lg:24px; --pill:9999px;
+    --shadow-card:0 4px 24px rgba(0,0,0,0.45);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:radial-gradient(ellipse at 60% -10%, rgba(var(--primary-rgb),0.14) 0%, transparent 60%), var(--bg);
+    background-attachment:fixed;
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    padding:40px 20px 70px;
+  }
+  .doc{max-width:820px;margin:0 auto;}
+
+  .ohead{
+    border-radius:var(--r-lg);
+    padding:30px 32px;
+    margin-bottom:20px;
+    background:linear-gradient(135deg, color-mix(in srgb,var(--primary) 80%, #000) 0%, var(--primary) 60%, var(--primary-light) 100%);
+    box-shadow:0 20px 48px rgba(var(--primary-rgb),0.25);
+    position:relative; overflow:hidden;
+  }
+  .ohead::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.10);top:-130px;right:-70px;}
+  .ohead .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:500;}
+  .ohead h1{font-family:var(--font-display);font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.01em;margin:8px 0 4px;color:#fff;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec-label{
+    font-family:var(--font-mono); font-size:11px; font-weight:500;
+    letter-spacing:.12em; text-transform:uppercase;
+    color:var(--primary); margin:26px 0 12px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:var(--r-lg);
+    padding:22px 24px;
+    margin-bottom:14px;
+    box-shadow:var(--shadow-card);
+  }
+  .card--accent{border-left:3px solid var(--primary);}
+  .card h4{
+    font-family:var(--font-mono); font-size:10px; font-weight:500;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--primary); margin-bottom:14px;
+  }
+  .lead{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--text-2);}
+
+  .row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+  .row:last-child{border-bottom:none;}
+  .row .when{font-family:var(--font-mono);color:var(--text-3);font-size:12px;width:64px;flex-shrink:0;padding-top:2px;}
+  .row .label{flex:1;min-width:0;}
+  .row .label .t{font-size:14px;color:var(--text);}
+  .row .label .s{font-size:12px;color:var(--text-3);margin-top:2px;}
+  .tag{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.04em;padding:3px 10px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .tag-green{background:var(--green-bg);color:var(--green);}
+  .tag-amber{background:var(--amber-bg);color:var(--amber);}
+  .tag-red{background:var(--red-bg);color:var(--red);}
+
+  .empty{font-size:14px;color:var(--text-3);font-style:italic;padding:6px 0;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow-card);}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));}
+  .stat .l{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);}
+  .stat .n{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.01em;margin-top:8px;color:var(--text-2);}
+  .stat .sub{font-size:12px;color:var(--text-3);margin-top:8px;line-height:1.6;}
+
+  .note{
+    background:linear-gradient(135deg, var(--bg-card-2) 0%, color-mix(in srgb,var(--primary) 20%, var(--bg-card-2)) 100%);
+    border:1px solid var(--border-2);
+    color:#fff;border-radius:var(--r-lg);padding:20px 24px;font-size:14px;line-height:1.7;margin-top:4px;
+  }
+  .note b{color:var(--primary-light);}
+
+  footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer__brand{font-family:var(--font-display);font-size:16px;font-weight:800;color:var(--primary);}
+  .footer__by{font-size:12px;color:var(--text-3);margin-left:6px;}
+  .footer__meta{font-family:var(--font-mono);font-size:11px;color:var(--text-3);}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="doc">
+
+    <div class="ohead">
+      <div class="k">COO · Morning Brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Sunday, 5 July 2026 · ran while you slept</div>
+    </div>
+
+    <div class="card card--accent">
+      <h4>Today, in one line</h4>
+      <div class="lead">Calendar is empty and the inbox is noise, not signal, no urgent or client emails came in overnight. One task carries over from last week. A clean slate: use it to move Unforgettable Hospitality forward instead of reacting to anything.</div>
+    </div>
+
+    <div class="sec-label">Today's Schedule</div>
+    <div class="card">
+      <div class="empty">Nothing on the calendar today.</div>
+      <div class="row" style="border-top:1px solid var(--border);margin-top:8px;padding-top:14px;border-bottom:none;">
+        <div class="label"><div class="t">No meetings, no conflicts</div><div class="s">Protect the day for deep work</div></div>
+        <span class="tag tag-green">on track</span>
+      </div>
+    </div>
+
+    <div class="sec-label">Inbox Priorities</div>
+    <div class="card">
+      <div class="empty" style="margin-bottom:10px;">No urgent, deadline, or response-needed emails in the last 24 hours. 29 messages came in, all newsletters and promotions.</div>
+      <div class="row"><div class="label"><div class="t">Mindvalley masterclass reminder</div><div class="s">info@hello.mindvalley.com · promo</div></div><span class="tag tag-green">archive</span></div>
+      <div class="row"><div class="label"><div class="t">AppSumo weekly deals</div><div class="s">support@appsumo.com · promo</div></div><span class="tag tag-green">archive</span></div>
+      <div class="row"><div class="label"><div class="t">"This is your sign" - AI &amp; Social Media Summit</div><div class="s">support@johnleegroup.com · promo</div></div><span class="tag tag-green">archive</span></div>
+      <div class="row"><div class="label"><div class="t">Ryanair flight deals</div><div class="s">marketing.ryanairemail.com · promo</div></div><span class="tag tag-green">archive</span></div>
+      <div class="row"><div class="label"><div class="t">Facebook ad changes for 2026</div><div class="s">clients@jasonnyback.com · promo</div></div><span class="tag tag-green">archive</span></div>
+    </div>
+
+    <div class="sec-label">Tasks</div>
+    <div class="card">
+      <div class="row"><div class="label"><div class="t">Update homepage copy</div><div class="s">Status: Up next · no due date set</div></div><span class="tag tag-green">can wait</span></div>
+      <div class="empty" style="margin-top:8px;">Nothing due today or overdue in Notion.</div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h4>Content Slot</h4>
+        <div class="empty">No content scheduled today. No content calendar entry found for Unforgettable Hospitality.</div>
+      </div>
+      <div class="stat">
+        <div class="l">Key Metric</div>
+        <div class="n">Not set</div>
+        <div class="sub">No tracked metric found in your documents. Pick one number this week, reviews, DMs sent, or booked calls, and it will show here.</div>
+      </div>
+    </div>
+
+    <div class="note">One thing to move the needle today: <b>with the calendar clear, spend it on Unforgettable Hospitality outreach or the Booty's/Zeta's proof content</b>, since nothing else in this brief is competing for your attention.</div>
+
+    <footer>
+      <div><span class="footer__brand">Unforgettable Hospitality</span><span class="footer__by">COO Morning Brief · Purely Personal</span></div>
+      <div class="footer__meta">Generated 5 July 2026</div>
+    </footer>
+  </div>
+</body>
+</html>
