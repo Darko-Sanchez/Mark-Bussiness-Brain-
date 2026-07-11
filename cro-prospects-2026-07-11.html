@@ -1,0 +1,381 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRO Weekly Prospects · Unforgettable Hospitality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Rethink+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-dark:#C4203D; --primary-light:#F5607A; --primary-rgb:232,41,76;
+    --bg:#0A0A0A; --bg-card:#111111; --bg-card-2:#181818; --bg-card-3:#1F1F1F;
+    --border:rgba(255,255,255,0.07); --border-2:rgba(255,255,255,0.13);
+    --text:#FFFFFF; --text-2:rgba(255,255,255,0.62); --text-3:rgba(255,255,255,0.32);
+    --green:#22C55E; --green-bg:rgba(34,197,94,0.10);
+    --amber:#F59E0B; --amber-bg:rgba(245,158,11,0.10);
+    --blue:#3B82F6; --blue-bg:rgba(59,130,246,0.10);
+    --red-status:#EF4444; --red-status-bg:rgba(239,68,68,0.10);
+    --r-sm:8px; --r-md:16px; --r-lg:24px; --r-pill:9999px;
+    --shadow-card:0 4px 24px rgba(0,0,0,0.45);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',system-ui,sans-serif;background:radial-gradient(ellipse at 60% -10%, rgba(232,41,76,0.16) 0%, transparent 60%), var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;padding:0 0 80px;}
+  ::selection{background:rgba(232,41,76,0.28);}
+  .doc{max-width:880px;margin:0 auto;padding:44px 22px 0;}
+
+  .cover{padding:8px 2px 26px;border-bottom:1px solid var(--border);margin-bottom:28px;}
+  .badge{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);background:rgba(var(--primary-rgb),0.10);border:1px solid rgba(var(--primary-rgb),0.25);padding:5px 13px;border-radius:var(--r-pill);margin-bottom:18px;}
+  .cover h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:clamp(30px,5vw,46px);letter-spacing:-.02em;margin-bottom:8px;}
+  .cover .sub{font-size:15px;color:var(--text-2);}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px;}
+  .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));}
+  .stat .l{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;}
+  .stat .n{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;margin-top:6px;color:var(--text);}
+  .stat .n span.hot{color:var(--green);}
+
+  .sec-label{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin:38px 0 16px;display:flex;align-items:center;gap:10px;}
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* prospect card */
+  .pcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 26px;margin-bottom:18px;}
+  .ph{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+  .ph .nm{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;letter-spacing:-.01em;}
+  .ph .rl{font-size:13px;color:var(--text-2);margin-top:3px;}
+  .ph .loc{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-3);margin-top:2px;}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .tag{font-size:11px;font-weight:700;padding:4px 11px;border-radius:var(--r-pill);white-space:nowrap;font-family:'DM Mono',monospace;letter-spacing:.03em;}
+  .t-hot{background:var(--green-bg);color:var(--green);} .t-warm{background:var(--amber-bg);color:var(--amber);}
+  .t-cold{background:var(--blue-bg);color:var(--blue);} .t-flag{background:var(--red-status-bg);color:var(--red-status);}
+
+  .fitgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0;}
+  .fitbox{background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:9px 6px;text-align:center;}
+  .fitbox .fl{font-family:'DM Mono',monospace;font-size:9px;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;}
+  .fitbox .fn{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;margin-top:2px;}
+  .fitoverall{display:flex;align-items:center;justify-content:space-between;background:rgba(var(--primary-rgb),0.08);border:1px solid rgba(var(--primary-rgb),0.22);border-radius:10px;padding:10px 14px;margin-bottom:6px;}
+  .fitoverall .fol{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;}
+  .fitoverall .fov{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--primary-light);}
+
+  .kv{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:13.5px;margin:12px 0;color:var(--text-2);}
+  .kv b{color:var(--text);font-weight:600;}
+  .hook{background:var(--bg-card-3);border-left:3px solid var(--primary);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:14.5px;font-style:italic;color:var(--text);}
+  .hook .src{display:block;font-family:'DM Mono',monospace;font-style:normal;font-size:10.5px;color:var(--text-3);margin-top:6px;letter-spacing:.02em;}
+  .signal{font-size:13.5px;color:var(--text-2);margin:10px 0;padding:10px 14px;background:var(--bg-card-2);border-radius:10px;}
+  .signal b{color:var(--text);}
+  .flagnote{font-size:13px;color:var(--red-status);background:var(--red-status-bg);border-radius:10px;padding:10px 14px;margin:10px 0;}
+
+  .seqtoggle{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin:18px 0 8px;}
+  .msg{background:var(--bg-card-2);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  .msg .ml{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--primary-light);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;display:flex;justify-content:space-between;}
+  .msg .mt{font-size:14px;line-height:1.7;color:var(--text);white-space:pre-line;}
+  .msg .mc{font-size:10.5px;color:var(--text-3);margin-top:6px;font-family:'DM Mono',monospace;}
+
+  .note{background:linear-gradient(135deg,var(--bg-card-2) 0%, rgba(var(--primary-rgb),0.14) 100%);border:1px solid rgba(var(--primary-rgb),0.2);color:var(--text);border-radius:var(--r-lg);padding:20px 24px;font-size:14.5px;margin-top:8px;}
+  .note b{color:var(--primary-light);}
+
+  .empty{background:var(--bg-card);border:1px dashed var(--border-2);border-radius:var(--r-lg);padding:26px;text-align:center;color:var(--text-2);font-size:14px;}
+  .empty b{color:var(--text);display:block;margin-bottom:6px;font-size:15px;}
+
+  .priocard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start;}
+  .prio-badge{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;padding:5px 11px;border-radius:var(--r-pill);flex-shrink:0;white-space:nowrap;}
+  .p1{background:var(--red-status-bg);color:var(--red-status);} .p2{background:var(--amber-bg);color:var(--amber);} .p3{background:var(--blue-bg);color:var(--blue);}
+
+  footer{max-width:880px;margin:56px auto 0;padding:24px 22px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer__brand{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;color:var(--primary);}
+  .footer__meta{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-3);}
+
+  @media(max-width:640px){.stats{grid-template-columns:1fr}.fitgrid{grid-template-columns:repeat(2,1fr)}.kv{grid-template-columns:96px 1fr}}
+</style>
+
+<div class="doc">
+
+  <div class="cover">
+    <div class="badge">CRO · Weekly Prospect Pack</div>
+    <h1>10 matched. 4 hot.</h1>
+    <div class="sub">Saturday, 11 July 2026 · sourced from your ICP via Apify · DMs drafted, nothing sent</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="l">Prospects</div><div class="n">10</div></div>
+    <div class="stat"><div class="l">Hot</div><div class="n"><span class="hot">4</span></div></div>
+    <div class="stat"><div class="l">DM sequences drafted</div><div class="n">50</div></div>
+  </div>
+
+  <div class="sec-label">The prospects</div>
+
+  <!-- 1 ANDREW WALSH -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Andrew Walsh</div><div class="rl">Michelin-Starred Chef &amp; Owner · Cure Concepts</div><div class="loc">Singapore · linkedin.com/in/andrew-walsh-2698a2165</div></div>
+      <div class="tags"><span class="tag t-warm">warm</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">8.0 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">7</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">9</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Amiable</b><span>Opening</span><b>Peer Opener</b></div>
+    <div class="signal"><b>Signal:</b> Cure Bali, his second room, was just named among Indonesia's best restaurants. Two locations now holding the same standard is not an accident.</div>
+    <div class="hook">"You named the restaurant after the Latin word for taking care. That's rare."<span class="src">Source: his About section defines Cure from Curare, "to take care of," as the operating philosophy behind the brand.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>177/300</span></div><div class="mt">Andrew, congrats on Cure Bali landing among Indonesia's best, that's two rooms now holding the same standard, not an accident. Following your mentoring posts too. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Good to connect, Andrew. No agenda here.
+Read your About section twice, you built Cure around the word Curare, to take care of. Most restaurants pick a name. You picked a philosophy and then built a Michelin room and a Bali outpost that both hold it.
+Are you more hands on the pass these days or mostly building the next generation of your team?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Been thinking about your Bali expansion. The hardest part of a second location is never the food, it's whether the same care shows up on a Tuesday when you're not in the room. I track that exact gap in restaurants I work with, guest language shifts the moment presence becomes a system instead of a person. Curious, is that the piece you're solving for right now with Bali, or something else entirely?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different question for you, Andrew. When you're training a new chef de partie to hold your standard without you standing there, what's the one thing you find yourself repeating most?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here for now, Andrew, no worries either way. If the Bali side of things ever needs another set of eyes on the floor, I'd genuinely enjoy that conversation. Wishing Cure and Cure Bali a great run.</div></div>
+  </div>
+
+  <!-- 2 AAGHIR YADAV -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Aaghir Yadav</div><div class="rl">Founder · Chimichanga &amp; Chimi's</div><div class="loc">Singapore · linkedin.com/in/aaghir-yadav-b875b555</div></div>
+      <div class="tags"><span class="tag t-hot">hot</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">8.5 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">8</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Expressive</b><span>Opening</span><b>Peer Opener</b></div>
+    <div class="signal"><b>Signal:</b> Opening a Grab &amp; Go format at Mandai Zoo in 2026, a break-in at the 313 outlet in April he processed publicly, and hosting a Bald Men Meetup at his own restaurant this month.</div>
+    <div class="hook">"Hosting the Bald Men Meetup at your own restaurant. That's real hospitality instinct."<span class="src">Source: post announcing Singapore Bald Men Meet Up at Chimi's Especial, 24 July.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>186/300</span></div><div class="mt">Aaghir, the Bald Men Meetup at Chimi's Especial made me laugh, that's exactly the kind of hospitality instinct you can't teach. Following the Chimichanga journey since 2016. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Great to connect, Aaghir. No agenda on my end lol.
+Hosting a whole meetup for your bald brothers at your own restaurant, that's not marketing, that's just who you are with people. Explains a lot about why Chimi's has held on since 2016.
+Quick one, with the new Grab &amp; Go at Mandai Zoo coming, are you more excited about the new format or a little nervous about training a team that isn't standing next to you at VivoCity?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Been thinking about what you posted after the break-in at 313. Running an honest business and having someone try to take that from you at 4am, that stays with you longer than the damage does. Most owners I talk to say the hardest part of growth isn't the new location, it's whether the team holds the same energy when you're not physically there. Is that showing up yet with Little Chimi's, or still early days?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Random one, Aaghir. Sing Mex as a concept, tacos next to Angus Ribeye, that's an unusual combo that clearly works. What made you sure guests would go for it before you had the reviews to prove it?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll step back for now, Aaghir, appreciate you connecting. If Little Chimi's ever needs a second opinion on keeping the floor energy consistent across five locations, I'm around. Good luck with the zoo launch.</div></div>
+  </div>
+
+  <!-- 3 STEFANO ALVIN MANAFE -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Stefano Alvin Manafe</div><div class="rl">Deputy Director of Operations · Blue Waves</div><div class="loc">Singapore · linkedin.com/in/stefano-alvin-manafe-6a3a15b0</div></div>
+      <div class="tags"><span class="tag t-hot">hot</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">8.3 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">7</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Analytical</b><span>Opening</span><b>Directness Play</b></div>
+    <div class="signal"><b>Signal:</b> Spoke three days ago on a Finova Group F&amp;B panel, "Resilience Beyond the Kitchen," naming staff development and people investment as core to sustainable growth alongside financial discipline.</div>
+    <div class="hook">"You said growth needs brand readiness and people, not just capital. Rare take."<span class="src">Source: his panel recap post on the Finova Group F&amp;B resilience discussion, 3 days ago.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>172/300</span></div><div class="mt">Stefano, your line on the Finova panel, growth isn't about capital, it's brand readiness and people, is something most operators miss entirely. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Stefano, I'll skip the small talk.
+Read your recap from the Finova panel twice. The line about sustainable growth needing financial discipline AND investing in people, most operators pick one and call it a strategy.
+What does that people investment piece actually look like day to day at Blue Waves right now?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Something that stuck with me from your panel notes, you mentioned menu engineering and cost management in the same breath as staff development. Most operators treat those as separate departments. The ones who don't usually see it show up first in guest reviews, the language shifts before the P&amp;L does. Are you tracking that shift anywhere at Blue Waves, or mostly watching the financial side?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different angle, Stefano. With sustainability training rolling out across your operations team, what's been the hardest habit to actually change on the floor versus just talk about in the session?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave you to it for now, Stefano, no pressure at all. Really respected the way you framed people investment on that panel, not many operators say it that plainly. Door's open if it's ever useful.</div></div>
+  </div>
+
+  <!-- 4 VINCENT PHANG -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Vincent Phang</div><div class="rl">Chief Executive Officer · Kitchen Haus Group</div><div class="loc">Singapore · linkedin.com/in/vincent-phangck</div></div>
+      <div class="tags"><span class="tag t-warm">warm</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">6.8 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">6</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">6</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">6</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Driver</b><span>Opening</span><b>Directness Play</b></div>
+    <div class="signal"><b>Signal:</b> 36 years in F&amp;B and catering, President of ACAPS 2019-2023, recently profiled by The Singapore Lens. His own posts are broadcast-style leadership content rather than conversational, so confidence on the read is medium.</div>
+    <div class="hook">"36 years in catering and you still post about believing in unproven people."<span class="src">Source: his repeated post on hiring for attitude and character over resume.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>184/300</span></div><div class="mt">Vincent, 36 years leading catering and hospitality and you're still writing about believing in people before they've proven themselves. That consistency stands out. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Vincent, I'll get straight to it.
+Your post on hiring for attitude over resume caught me, mostly because most CEOs say that and then still hire on paper. Genuinely curious if that's how Kitchen Haus actually hires.
+Do you find that philosophy gets harder to hold onto as the group scales, or easier?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Thought about your ACAPS work through COVID after reading your background, guiding the sector through disruption when nobody had a playbook. That kind of steady leadership usually gets forgotten once things stabilize. Curious what from that period you kept in how Kitchen Haus runs large scale events today, and what you dropped.</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different one for you, Vincent. Across banquet, catering, and state functions, is there one thing that consistently separates a five star event from a four star one that has nothing to do with the menu?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here, Vincent, appreciate the connect either way. Respect for the run you've had across catering and ACAPS. If it's ever useful, I'm around.</div></div>
+  </div>
+
+  <!-- 5 ELIM CHEW -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Elim Chew</div><div class="rl">Chairman · I M Kim Korean BBQ / GoroGoro Steamboat / Captain Kim Korean BBQ</div><div class="loc">Singapore · linkedin.com/in/elim-chew-tv-pbm-4375391</div></div>
+      <div class="tags"><span class="tag t-warm">warm</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">6.8 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">6</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">5</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">8</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Amiable</b><span>Opening</span><b>Peer Opener</b></div>
+    <div class="signal"><b>Signal:</b> Chairman across four restaurant brands, spends her active LinkedIn time congratulating other founders' new launches rather than posting about her own restaurants, a mentor-first posture.</div>
+    <div class="hook">"Chairman of four restaurant brands, still spending your time cheering on new founders."<span class="src">Source: recent congratulations posts on WhereWeBegin founders' launches.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>194/300</span></div><div class="mt">Elim, noticed you're Chairman across four different Korean BBQ and steamboat brands, and still taking the time to cheer on new founders publicly. That says something about you. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Great to connect, Elim. No agenda on my end lol.
+Chairman of I M Kim, GoroGoro, Captain Kim, and still commenting congratulations on other founders' launches, that's not something busy chairmen usually make time for.
+Quick one, with four brands under you now, are you more hands on with the guest experience side these days or mostly building the people who run it?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Been thinking about your path, from 77th Street to Korean BBQ and steamboat, that's a real pivot into hospitality. The thing that usually determines whether a group holds its standard across four concepts is whether the warmth on the floor depends on you being there or the team. Where would you say I M Kim and the others land on that right now?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different question, Elim. Of the four brands you're Chairman of, which one do you feel has the strongest team culture right now, and why that one?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here for now, Elim, no worries at all. Genuinely enjoyed learning about your path into hospitality. If it's ever useful down the line, happy to talk.</div></div>
+  </div>
+
+  <!-- 6 IVAN LOONG -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Ivan Loong</div><div class="rl">Board Member · Timbre Group</div><div class="loc">Singapore · linkedin.com/in/ivan-loong</div></div>
+      <div class="tags"><span class="tag t-cold">cold</span><span class="tag t-flag">proceed with caution</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">5.3 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">7</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">5</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">4</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">5</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Analytical</b><span>Opening</span><b>Directness Play</b></div>
+    <div class="signal"><b>Signal:</b> No LinkedIn posts in the last year. His background is telecom and business continuity, not hospitality, which is an unusual path onto Timbre's board.</div>
+    <div class="flagnote">Fit score is right at the line. The Human Hook below is credential-based, not a genuine personal observation, because his activity is too thin to find one. Recommend 5 minutes of manual research, a comment, an event he attended, before sending M2.</div>
+    <div class="hook">"Built emergency and continuity platforms for Singtel before joining Timbre's board."<span class="src">Source: his experience section. Flagged as needing manual research for a stronger hook.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>171/300</span></div><div class="mt">Ivan, your background building continuity and crisis platforms for Singtel and IMDA before joining Timbre's board is an unusual path into hospitality governance. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Ivan, I'll skip the build up.
+Noticed your background is telecom and business continuity, not hospitality, yet you're on Timbre's board. That's an interesting lens to bring into a live music and restaurant group.
+What drew you to the F&amp;B and entertainment side specifically?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Thinking about the continuity and crisis planning background you bring to Timbre's board. Most hospitality groups build their standard around one strong GM or ops lead, and it's fragile the same way an untested system is fragile. Curious how Timbre thinks about that risk across its venues, is it something the board actively tracks?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different angle, Ivan. From a board level, what's the one metric at Timbre that tells you fastest whether a venue is actually working, beyond revenue?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here, Ivan, no worries either way. Appreciate the connect. If a continuity-minded conversation about guest experience consistency is ever useful, I'm around.</div></div>
+  </div>
+
+  <!-- 7 JASON MORGAN -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Jason Morgan</div><div class="rl">CEO · Original ChopShop</div><div class="loc">Dallas, TX, United States · linkedin.com/in/jason-morgan-a7719a4</div></div>
+      <div class="tags"><span class="tag t-hot">hot</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">9.0 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">10</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">8</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Driver</b><span>Opening</span><b>Directness Play</b></div>
+    <div class="signal"><b>Signal:</b> ChopShop just moved to #9 on Fast Casual's Top 13, up from #13 last year. He's booked for a first-ever unscripted CEO-to-CEO discussion in Atlanta this September on leadership, franchising vs company-owned growth, and protecting unit economics while scaling.</div>
+    <div class="hook">"Paused your Hot Takes posts on purpose. That kind of restraint is rare."<span class="src">Source: his post noting a deliberate pause on his "Hot Takes" LinkedIn series.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>183/300</span></div><div class="mt">Jason, congrats on ChopShop cracking #9 this year, up from #13. Also noticed you paused Hot Takes on purpose, that kind of restraint is rare on LinkedIn. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Jason, I'll skip the formalities.
+#9 on Fast Casual's list two years running, and a marketing team of two running $4k a month cash spend with 19 straight periods of positive traffic, that's an operator's flex, not a marketer's.
+What's actually made the bigger difference this year, the team you built or the systems you put under them?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Been thinking about the CEO to CEO session you've got coming up with Troy Hooper in Atlanta. The topics you listed, franchising vs company owned, protecting unit economics while growing, that's the exact tension I see wreck otherwise good restaurant groups. The ones who hold it usually have the standard living in the team, not just the P&amp;L. Is that the piece you and Troy are planning to get into, or more the financial mechanics?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different one, Jason. With almost no marketing spend but Karissa and Julia clearly driving real traffic, what's the one thing your team does on the ground that you couldn't buy with a bigger budget?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here for now, Jason, no worries either way. Genuinely looking forward to hearing how the Atlanta session with Troy goes. Door's open if useful.</div></div>
+  </div>
+
+  <!-- 8 MATT LINCOLN -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Matt Lincoln J.</div><div class="rl">President · Donut Holdings, Inc. / LaMar's Donuts and Coffee</div><div class="loc">Denver, CO, United States · linkedin.com/in/matt-lincoln-j-6b125631</div></div>
+      <div class="tags"><span class="tag t-cold">cold</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">6.0 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">7</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">4</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">5</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Analytical</b><span>Opening</span><b>Directness Play</b></div>
+    <div class="signal"><b>Signal:</b> 16 years as President, 40 years in hospitality. No recent LinkedIn activity, so the read leans on his About section, which leads with Quality and Service Standards before growth metrics.</div>
+    <div class="hook">"16 years as President, still writing about core values, not just growth targets."<span class="src">Source: his About section, which opens with quality and service standards before strategic growth.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>197/300</span></div><div class="mt">Matt, 16 years as President at Donut Holdings and 40 years in hospitality, and your About still leads with Quality and Service Standards before growth numbers. That order says something. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Matt, I'll get to it.
+Most President bios lead with growth numbers. Yours leads with Quality and Service Standards of Excellence first. After 16 years running LaMar's, that's clearly not a talking point for you.
+What's the hardest part of keeping that standard consistent across every LaMar's location day to day?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Thinking about the balance you mentioned, strategic growth and operational efficiency alongside a customer centric approach. Most donut and coffee chains lean hard into consistency of product and lose the human warmth at the counter along the way. Curious how LaMar's protects that second piece as the brand grows, is it training, hiring, or something else entirely?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different question, Matt. After 40 years in the industry, what's one thing about running a coffee and donut brand that surprised you even after decades in hospitality?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here, Matt, no pressure at all. Appreciate the connect and the 40 years of perspective behind it. If useful down the line, I'm around.</div></div>
+  </div>
+
+  <!-- 9 MICHAEL COSTA -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Michael Costa</div><div class="rl">CEO · Rainmaker Hospitality Group, Investor in F&amp;B Projects</div><div class="loc">Dallas, TX, United States · linkedin.com/in/michael-costa-411900172</div></div>
+      <div class="tags"><span class="tag t-warm">warm</span><span class="tag t-flag">proceed with caution</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">5.3 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">5</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">3</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">5</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Driver</b><span>Opening</span><b>Authority Flip</b></div>
+    <div class="flagnote">He runs his own hospitality consulting and restaurant-opening practice, which overlaps your category. Best framed as a peer or referral conversation, not a straightforward client pitch. Fit score reflects that overlap.</div>
+    <div class="signal"><b>Signal:</b> 21 Wine Spectator awards across the restaurants he's opened, client roster includes Nobu and Robert De Niro's team. Recent posts are low-signal, personal, a site update and a soccer congrats.</div>
+    <div class="hook">"21 Wine Spectator Awards and you still call your team the most decorated."<span class="src">Source: his About section listing 21 Wine Spectator awards and "most decorated consulting group in the Southwest."</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>131/300</span></div><div class="mt">Michael, 21 Wine Spectator Awards across the restaurants you've opened is a wild number. Noticed the new site too. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Michael, I don't send many of these.
+21 Wine Spectator Awards and a client list that includes Nobu and Robert De Niro's team stopped me scrolling. Most consultants in this space have a logo wall. You have decades of actual openings behind it.
+Genuinely curious, of everything you've opened, which one pushed you the hardest to rethink how you work?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Been thinking about the range of your work, concept development, design, training, oversight. The piece that usually gets underweighted in that list is what happens to the guest experience standard once you hand the keys back to the operator and walk away. Do you track that after your engagements end, or is that outside your scope?</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different one, Michael. Across all the openings you've run, is there a single early decision that predicts whether a restaurant holds its standard a year later?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here for now, Michael, no worries either way. Respect for the run of openings behind you. If it's ever useful, happy to talk shop.</div></div>
+  </div>
+
+  <!-- 10 THOMAS FARMER -->
+  <div class="pcard">
+    <div class="ph">
+      <div><div class="nm">Thomas C. Farmer</div><div class="rl">President · Merlins Pizza, Managing Partner · Cassette Capital</div><div class="loc">Destin, FL, United States · linkedin.com/in/thomascfarmer</div></div>
+      <div class="tags"><span class="tag t-hot">hot</span></div>
+    </div>
+    <div class="fitoverall"><span class="fol">Fit Score</span><span class="fov">8.5 / 10</span></div>
+    <div class="fitgrid">
+      <div class="fitbox"><div class="fl">Role</div><div class="fn">9</div></div>
+      <div class="fitbox"><div class="fl">Pain</div><div class="fn">8</div></div>
+      <div class="fitbox"><div class="fl">Timing</div><div class="fn">10</div></div>
+      <div class="fitbox"><div class="fl">Relationship</div><div class="fn">7</div></div>
+    </div>
+    <div class="kv"><span>Style</span><b>Expressive</b><span>Opening</span><b>Pattern Interrupt</b></div>
+    <div class="signal"><b>Signal:</b> Formed a new partnership with a friend specifically to buy more businesses, announced on LinkedIn and Substack. Independent owner-operator actively moving into acquisition mode.</div>
+    <div class="hook">"Forming a new partnership just to buy more restaurants. That's real conviction."<span class="src">Source: his post announcing a new partnership with Tom Johnell to acquire more businesses.</span></div>
+    <div class="seqtoggle">Full 5-message sequence</div>
+    <div class="msg"><div class="ml"><span>M1 · Connection Request</span><span>151/300</span></div><div class="mt">Thomas, forming a new partnership with Tom just to go buy more businesses is a real statement of conviction. Following the Substack too. Good to connect.</div></div>
+    <div class="msg"><div class="ml"><span>M2 · Icebreaker</span><span>send on accept</span></div><div class="mt">Hey Thomas, good to be connected.
+I talk to a lot of restaurant owners, most are heads down just trying to keep one location standing. You're forming a partnership to go acquire more.
+What's the read you and Tom have on what actually makes an acquired restaurant worth buying versus one that's a slow bleed?</div></div>
+    <div class="msg"><div class="ml"><span>M3 · Value Bridge</span><span>day 2 to 3 if no reply</span></div><div class="mt">Thinking about the acquisition play you and Tom are running. The part that usually breaks when someone buys a second or third restaurant is the guest experience standard, it was built around the old owner and doesn't automatically transfer to new ownership. Curious if that's something you're actively diagnosing before you buy, or something you plan to fix after.</div></div>
+    <div class="msg"><div class="ml"><span>M4 · The Pivot</span><span>day 3 to 4 if no reply</span></div><div class="mt">Different question, Thomas. At Merlins, what's the one thing on the floor that's uniquely yours, something a new owner buying it from you would struggle to replicate?</div></div>
+    <div class="msg"><div class="ml"><span>M5 · Clean Exit</span><span>day 5 to 7 if no reply</span></div><div class="mt">I'll leave it here for now, Thomas, no worries at all. Excited to see where the new partnership takes you and Tom. Door's open if it's ever useful.</div></div>
+  </div>
+
+  <div class="note">Open your highest-signal prospect first: <b>Jason Morgan, Original ChopShop</b>. #9 on Fast Casual's list, a live CEO-to-CEO session booked in September on the exact tensions you solve for, and a Driver who responds to directness. Every DM here is a draft. You send, after you read it.</div>
+
+  <div class="sec-label">Pipeline triage</div>
+  <div class="empty">
+    <b>Notion isn't connected in this session</b>
+    Notion is linked to your account but not enabled for this chat, so I couldn't pull your active deals to triage into Priority 1 / 2 / 3 or draft next-action DMs for them. Enable the Notion connector in this chat's settings and rerun this step to populate live pipeline triage here.
+  </div>
+
+  <footer>
+    <div><span class="footer__brand">Unforgettable Hospitality</span></div>
+    <div class="footer__meta">CRO Weekly Prospects · 11 July 2026 · Fit score below 5 or overlap risk is flagged inline · nothing here has been sent</div>
+  </footer>
+
+</div>
