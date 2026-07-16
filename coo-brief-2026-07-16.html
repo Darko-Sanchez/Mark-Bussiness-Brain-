@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 16 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Rethink+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-dark:#C4203D; --primary-light:#F5607A; --primary-rgb:232,41,76;
+    --bg:#0A0A0A; --bg-card:#111111; --bg-card-2:#181818; --bg-card-3:#1F1F1F;
+    --border:rgba(255,255,255,0.07); --border-2:rgba(255,255,255,0.13);
+    --text:#FFFFFF; --text-2:rgba(255,255,255,0.58); --text-3:rgba(255,255,255,0.28);
+    --green:#22C55E; --green-bg:rgba(34,197,94,0.10);
+    --amber:#F59E0B; --amber-bg:rgba(245,158,11,0.10);
+    --red:#EF4444; --red-bg:rgba(239,68,68,0.10);
+    --font-display:'Playfair Display', Georgia, serif;
+    --font-body:'Rethink Sans', system-ui, sans-serif;
+    --font-mono:'DM Mono', monospace;
+    --r-sm:8px; --r-md:16px; --r-lg:24px; --r-pill:9999px;
+    --shadow-card:0 4px 24px rgba(0,0,0,0.45);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body); background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased; padding:40px 20px 80px; max-width:820px; margin:0 auto;
+  }
+  ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--bg-card);}
+  ::-webkit-scrollbar-thumb{background:rgba(var(--primary-rgb),0.4); border-radius:3px;}
+  ::selection{background:rgba(var(--primary-rgb),0.25);}
+
+  .cover{
+    position:relative; overflow:hidden; border-radius:var(--r-lg);
+    padding:36px 32px; margin-bottom:28px;
+    background:radial-gradient(ellipse at 60% 20%, rgba(var(--primary-rgb),0.18) 0%, transparent 65%), var(--bg-card);
+    border:1px solid var(--border);
+  }
+  .cover::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:18px 18px;
+  }
+  .kicker{
+    font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--primary); position:relative;
+  }
+  .cover h1{
+    font-family:var(--font-display); font-weight:900; letter-spacing:-.02em;
+    font-size:clamp(28px,4.5vw,40px); margin:10px 0 6px; position:relative;
+  }
+  .cover .date{ font-size:14px; color:var(--text-2); position:relative; }
+
+  .sec-label{
+    font-family:var(--font-mono); font-size:11px; font-weight:500;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--primary);
+    margin:28px 0 14px; display:flex; align-items:center; gap:10px;
+  }
+  .sec-label::after{ content:''; flex:1; height:1px; background:var(--border); }
+
+  .card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-lg);
+    padding:22px 24px; margin-bottom:12px; box-shadow:var(--shadow-card);
+  }
+  .card--accent{ border-left:3px solid var(--primary); }
+  .card__title{
+    font-family:var(--font-display); font-size:18px; font-weight:800;
+    letter-spacing:-.01em; margin-bottom:4px; color:var(--text);
+  }
+  .card__sub{ font-size:13px; color:var(--text-2); margin-bottom:2px; }
+  .card__body{ font-size:14px; line-height:1.7; color:var(--text-2); }
+  .empty{ font-size:14px; color:var(--text-3); font-style:italic; padding:4px 0; }
+
+  .row{
+    display:flex; align-items:flex-start; gap:14px; padding:14px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .row:last-child{ border-bottom:none; padding-bottom:0; }
+  .row:first-child{ padding-top:0; }
+  .row .info{ flex:1; min-width:0; }
+  .row .title{ font-size:14.5px; font-weight:600; color:var(--text); margin-bottom:3px; }
+  .row .meta{ font-size:12.5px; color:var(--text-3); }
+  .tag{
+    font-family:var(--font-mono); font-size:10.5px; font-weight:500; letter-spacing:.06em;
+    text-transform:uppercase; padding:4px 11px; border-radius:var(--r-pill);
+    white-space:nowrap; flex-shrink:0; margin-top:1px;
+  }
+  .tag--red{ background:var(--red-bg); color:var(--red); }
+  .tag--amber{ background:var(--amber-bg); color:var(--amber); }
+  .tag--green{ background:var(--green-bg); color:var(--green); }
+
+  .metric-card{ text-align:left; }
+  .metric-label{ font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:10px; }
+  .metric-value{ font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--text-3); }
+
+  .note{
+    background:linear-gradient(135deg, var(--bg-card-2) 0%, rgba(var(--primary-rgb),0.14) 100%);
+    border:1px solid rgba(var(--primary-rgb),0.2);
+    border-radius:var(--r-lg); padding:20px 24px; font-size:14.5px; line-height:1.7;
+    margin-top:6px; color:var(--text);
+  }
+  .note b{ color:var(--primary-light); }
+
+  footer{
+    margin-top:48px; padding-top:22px; border-top:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  .footer__brand{ font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--primary); }
+  .footer__by{ font-size:12.5px; color:var(--text-3); margin-left:8px; }
+  .footer__meta{ font-family:var(--font-mono); font-size:11px; color:var(--text-3); }
+
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .fade-up{ opacity:0; animation:fadeUp .5s ease forwards; }
+  .fd-1{animation-delay:.05s;} .fd-2{animation-delay:.10s;} .fd-3{animation-delay:.15s;}
+  .fd-4{animation-delay:.20s;} .fd-5{animation-delay:.25s;} .fd-6{animation-delay:.30s;}
+</style>
+</head>
+<body>
+
+  <div class="cover fade-up fd-1">
+    <div class="kicker">COO · Morning Brief</div>
+    <h1>Good morning, Mark.</h1>
+    <div class="date">Thursday, 16 July 2026 · ran while you slept</div>
+  </div>
+
+  <div class="card card--accent fade-up fd-1">
+    <div class="card__title">Today, in one line</div>
+    <div class="card__body">Calendar is wide open, but two things came in overnight worth a real look: a private equity firm asking about 432 Productions, and confirmed dates for the bootcamp live sessions (Fri Jul 17 and Sat Jul 18) that aren't on your calendar yet.</div>
+  </div>
+
+  <div class="sec-label">Today's Schedule</div>
+  <div class="card fade-up fd-2">
+    <div class="empty">Nothing on the calendar today. Protect the space.</div>
+  </div>
+
+  <div class="sec-label">Inbox Priorities</div>
+  <div class="card fade-up fd-3">
+    <div class="row">
+      <div class="info">
+        <div class="title">Paige Baker · Summit Acquisition Group</div>
+        <div class="meta">"Offer to Purchase 432 Productions" · a PE firm wants to discuss acquiring the business, asked for your availability</div>
+      </div>
+      <span class="tag tag--red">reply</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <div class="title">admin@danielpaul.ai</div>
+        <div class="meta">"Confirmed Live Session Dates" · bootcamp sessions locked for Fri Jul 17 and Sat Jul 18, 3:00-6:00 PM Finland time · not yet on your calendar</div>
+      </div>
+      <span class="tag tag--amber">decide</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <div class="title">Heather Anne Clarke</div>
+        <div class="meta">"wrong Gong date!" · correction, the right Thursday is July 30, not the 29th</div>
+      </div>
+      <span class="tag tag--amber">review</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <div class="title">danny@danielpaul.ai</div>
+        <div class="meta">"We go live in less than 24 hours!" · reminder for the Second Brain workshop</div>
+      </div>
+      <span class="tag tag--green">fyi</span>
+    </div>
+    <div style="font-size:12.5px;color:var(--text-3);margin-top:14px;padding-top:14px;border-top:1px solid var(--border);">42 other messages in the last 24 hours were newsletters, receipts, and promotions, filtered out as noise.</div>
+  </div>
+
+  <div class="sec-label">Tasks</div>
+  <div class="card fade-up fd-4">
+    <div class="empty">No tasks due today or overdue in Notion.</div>
+    <div style="font-size:12.5px;color:var(--text-3);margin-top:10px;">The connected Notion workspace only has sample project tasks (Website Redesign, Mobile App Launch), nothing assigned to you with a live due date. Add your real task list to populate this section.</div>
+  </div>
+
+  <div class="sec-label">Content Slot</div>
+  <div class="card fade-up fd-5">
+    <div class="empty">No content calendar entry found for today's date in Notion.</div>
+  </div>
+
+  <div class="sec-label">Key Metric</div>
+  <div class="card metric-card fade-up fd-5">
+    <div class="metric-label">Key Metric</div>
+    <div class="metric-value">Not set yet</div>
+    <div class="card__body" style="margin-top:8px;">Pick one number to track this week (revenue, DMs sent, reviews generated) and paste it here tomorrow morning.</div>
+  </div>
+
+  <div class="note fade-up fd-6">
+    One thing to move the needle today: <b>reply to Paige Baker with your availability, even just to hear the offer.</b> It costs you nothing to listen, and it's the only item in this brief with real money attached. Everything else, the session dates and the Gong correction, can wait until you've had coffee.
+  </div>
+
+  <footer class="fade-up fd-6">
+    <div><span class="footer__brand">Purely Personal</span><span class="footer__by">by Daniel Paul</span></div>
+    <div class="footer__meta">coo-brief-2026-07-16.html</div>
+  </footer>
+
+</body>
+</html>
