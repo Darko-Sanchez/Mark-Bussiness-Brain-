@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 18 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Rethink+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:        #E8294C;
+    --primary-dark:   #C4203D;
+    --primary-light:  #F5607A;
+    --primary-rgb:    232, 41, 76;
+
+    --bg:             #0A0A0A;
+    --bg-card:        #111111;
+    --bg-card-2:      #181818;
+
+    --border:         rgba(255,255,255,0.07);
+    --border-2:       rgba(255,255,255,0.13);
+
+    --text:           #FFFFFF;
+    --text-2:         rgba(255,255,255,0.58);
+    --text-3:         rgba(255,255,255,0.28);
+
+    --green:          #22C55E;
+    --green-bg:       rgba(34,197,94,0.10);
+    --amber:          #F59E0B;
+    --amber-bg:       rgba(245,158,11,0.10);
+    --red-status:     #EF4444;
+    --red-status-bg:  rgba(239,68,68,0.10);
+
+    --font-display:   'Playfair Display', Georgia, serif;
+    --font-body:      'Rethink Sans', system-ui, sans-serif;
+    --font-mono:      'DM Mono', monospace;
+
+    --r-sm:  8px;
+    --r-md:  16px;
+    --r-lg:  24px;
+    --r-pill: 9999px;
+
+    --shadow-card:  0 4px 24px rgba(0,0,0,0.45);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(ellipse at 60% 0%, rgba(var(--primary-rgb),0.14) 0%, transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    padding:40px 20px 80px;
+  }
+  .doc{max-width:820px;margin:0 auto;}
+  ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--bg-card);}
+  ::-webkit-scrollbar-thumb{background:rgba(var(--primary-rgb),0.4);border-radius:3px;}
+  ::selection{background:rgba(var(--primary-rgb),0.25);}
+
+  .cover{border-radius:var(--r-lg);padding:30px 32px;margin-bottom:24px;border:1px solid var(--border-2);background:var(--bg-card);position:relative;overflow:hidden;box-shadow:var(--shadow-card);}
+  .cover::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(var(--primary-rgb),0.14);top:-140px;right:-70px;pointer-events:none;filter:blur(2px);}
+  .cover .k{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
+  .cover h1{font-family:var(--font-display);font-size:clamp(26px,4.5vw,36px);font-weight:900;letter-spacing:-.02em;margin:8px 0 4px;}
+  .cover .d{font-family:var(--font-body);font-size:14px;color:var(--text-2);}
+  .cover .sum{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:14px;color:var(--text-2);line-height:1.7;}
+
+  .sec-label{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin:28px 0 14px;display:flex;align-items:center;gap:10px;}
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 24px;margin-bottom:14px;}
+  .card--accent{border-left:3px solid var(--primary);}
+  .card__label{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;}
+
+  .row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+  .row:last-child{border-bottom:none;}
+  .row .when{font-family:var(--font-mono);color:var(--text-3);font-size:12px;width:104px;flex-shrink:0;padding-top:2px;}
+  .row .label{flex:1;min-width:0;font-size:14px;color:var(--text);line-height:1.5;}
+  .row .sub{font-size:12px;color:var(--text-2);margin-top:2px;}
+  .tag{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:var(--r-pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .tag-red{background:var(--red-status-bg);color:var(--red-status);}
+  .tag-amb{background:var(--amber-bg);color:var(--amber);}
+  .tag-grn{background:var(--green-bg);color:var(--green);}
+  .tag-grey{background:rgba(255,255,255,0.06);color:var(--text-2);}
+
+  .empty{font-size:13px;color:var(--text-3);font-style:italic;padding:6px 0;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 24px;position:relative;overflow:hidden;}
+  .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));}
+  .stat .l{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);}
+  .stat .n{font-family:var(--font-display);font-size:30px;font-weight:800;letter-spacing:-.01em;margin-top:8px;color:var(--text);}
+  .stat .hint{font-size:12px;color:var(--text-3);margin-top:8px;line-height:1.6;}
+
+  .note{background:linear-gradient(135deg, #15151A 0%, rgba(var(--primary-rgb),0.22) 100%);border:1px solid var(--border-2);color:#fff;border-radius:var(--r-lg);padding:20px 24px;font-size:14px;line-height:1.7;margin-top:6px;}
+  .note b{color:var(--primary-light);}
+
+  footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer__brand{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--primary);}
+  .footer__by{font-family:var(--font-body);font-size:13px;color:var(--text-3);margin-left:8px;}
+  .footer__meta{font-family:var(--font-mono);font-size:11px;color:var(--text-3);}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .fade-up{opacity:0;animation:fadeUp .5s ease forwards;}
+  .fd-1{animation-delay:.05s;} .fd-2{animation-delay:.10s;} .fd-3{animation-delay:.15s;}
+  .fd-4{animation-delay:.20s;} .fd-5{animation-delay:.25s;} .fd-6{animation-delay:.30s;}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="cover fade-up">
+    <div class="k">COO · Morning brief</div>
+    <h1>Good morning, Mark.</h1>
+    <div class="d">Saturday, 18 July 2026 · ran while you slept</div>
+    <div class="sum">You have <strong>1 event</strong> today, <strong>no tasks due</strong> in Notion, and <strong>5 inbox items</strong> worth a look before you're heads-down in Day 2 of the workshop.</div>
+  </div>
+
+  <div class="sec-label">Today's Schedule</div>
+  <div class="card fade-up fd-1">
+    <div class="row">
+      <span class="when">5:00 – 8:00 AM</span>
+      <div class="label">
+        Build Your Second Brain That Runs Your Marketing <span style="color:var(--text-2)">· Day 2 of 2</span>
+        <div class="sub">Zoom · hosted by Daniel Paul · link in calendar invite</div>
+      </div>
+      <span class="tag tag-grn">on track</span>
+    </div>
+  </div>
+
+  <div class="sec-label">Inbox Priorities</div>
+  <div class="card fade-up fd-2">
+    <div class="row">
+      <div class="label">Day 1 is done.
+        <div class="sub">danny@danielpaul.ai · recording link + what to do before today's session</div>
+      </div>
+      <span class="tag tag-red">reply</span>
+    </div>
+    <div class="row">
+      <div class="label">We Begin in 30 Minutes
+        <div class="sub">danny@danielpaul.ai · Day 2 starting, folder and tools ready</div>
+      </div>
+      <span class="tag tag-amb">review</span>
+    </div>
+    <div class="row">
+      <div class="label">Credit card transaction exceeds alert limit you set
+        <div class="sub">Bank of America · $14.17 · Spotify · Jul 17</div>
+      </div>
+      <span class="tag tag-amb">decide</span>
+    </div>
+    <div class="row">
+      <div class="label">New changes on your credit report
+        <div class="sub">Experian · sign in to review</div>
+      </div>
+      <span class="tag tag-amb">review</span>
+    </div>
+    <div class="row">
+      <div class="label">Burglary reported less than 0.8 miles from home
+        <div class="sub">Neighborhood Alerts · Camelback Rd, Phoenix</div>
+      </div>
+      <span class="tag tag-grey">fyi</span>
+    </div>
+  </div>
+
+  <div class="sec-label">Tasks</div>
+  <div class="card fade-up fd-3">
+    <div class="card__label">Must do today</div>
+    <div class="empty">Nothing due today or overdue in Notion.</div>
+  </div>
+  <div class="card fade-up fd-3">
+    <div class="card__label">Should do today</div>
+    <div class="row">
+      <div class="label">Update homepage copy
+        <div class="sub">Notion · Tasks · Up next · no due date set</div>
+      </div>
+      <span class="tag tag-grey">no date</span>
+    </div>
+    <div style="font-size:12px;color:var(--text-3);margin-top:10px;">+2 more in Notion, none with due dates (Define MVP feature scope, Write FAQ for launch).</div>
+  </div>
+  <div class="card fade-up fd-3">
+    <div class="card__label">Can wait</div>
+    <div class="empty">Nothing flagged as low priority right now.</div>
+  </div>
+
+  <div class="sec-label">Content Slot</div>
+  <div class="card fade-up fd-4">
+    <div class="empty">No content scheduled today. No content calendar entry found in Notion for July 18.</div>
+  </div>
+
+  <div class="sec-label">Key Metric</div>
+  <div class="stat fade-up fd-5">
+    <div class="l">Key metric</div>
+    <div class="n" style="font-size:20px;color:var(--text-2)">Not set yet</div>
+    <div class="hint">No metric configured in your documents. Pick one number to track this week (revenue, DMs sent, audits booked) and it will show up here as an animated count from tomorrow.</div>
+  </div>
+
+  <div class="note fade-up fd-6">
+    One thing to move the needle today: <b>show up for Day 2 fully, then reply to Danny's Day 1 recap</b> before the momentum from yesterday fades. Everything else in this brief, the bank alert, the credit report, can wait until the workshop wraps.
+  </div>
+
+  <footer>
+    <div><span class="footer__brand">Purely Personal</span><span class="footer__by">by Daniel Paul</span></div>
+    <div class="footer__meta">COO Morning Brief · 18 Jul 2026</div>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+  window.addEventListener('load', function(){
+    if(!window.gsap) return;
+    gsap.from('.cover', {y:26, opacity:0, scale:.98, duration:.7, ease:'power3.out'});
+  });
+</script>
+</body>
+</html>
