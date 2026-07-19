@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 19, 2026</title>
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --bg:#0A0A0A; --surface:#161616; --surface-2:#1D1D1D;
+    --border:#2A2A2A; --text:#F2F1EF; --text-soft:#A8A7A4; --text-dim:#6E6D6A;
+    --good:#22C55E; --warn:#F5A524; --bad:#EF4444;
+    --r:14px; --pill:9999px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .doc{max-width:760px;margin:0 auto;padding:36px 20px 60px;}
+
+  .head{border-radius:var(--r);padding:26px 28px;margin-bottom:22px;color:#fff;
+    background:linear-gradient(135deg, color-mix(in srgb,var(--primary) 80%, #000) 0%, var(--primary) 60%, var(--primary-light) 100%);
+    box-shadow:0 16px 40px color-mix(in srgb,var(--primary) 25%, transparent); position:relative; overflow:hidden;}
+  .head::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08);top:-110px;right:-50px;}
+  .head .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;}
+  .head h1{font-size:clamp(22px,4vw,28px);font-weight:800;letter-spacing:-.01em;margin:6px 0 3px;}
+  .head .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-soft);font-weight:700;margin:26px 0 12px;}
+  .sec:first-of-type{margin-top:0;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;}
+
+  .row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;font-size:15px;border-bottom:1px solid var(--border);}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:var(--text-soft);font-size:13px;width:76px;flex-shrink:0;padding-top:1px;}
+  .row .label{flex:1;min-width:0;}
+  .row .label .t{color:var(--text);}
+  .row .sub{font-size:12.5px;color:var(--text-dim);margin-top:2px;}
+  .status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .s-green{background:color-mix(in srgb, var(--good) 16%, transparent);color:var(--good);}
+  .s-amber{background:color-mix(in srgb, var(--warn) 16%, transparent);color:var(--warn);}
+  .s-red{background:color-mix(in srgb, var(--bad) 16%, transparent);color:var(--bad);}
+
+  .empty{font-size:14px;color:var(--text-dim);font-style:italic;padding:6px 0;}
+
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;}
+  .stat .l{font-size:12px;color:var(--text-soft);}
+  .stat .n{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-top:6px;color:var(--text-dim);}
+  .stat .note{font-size:13px;color:var(--text-dim);margin-top:8px;}
+
+  footer{text-align:center;padding:30px 10px 10px;color:var(--text-dim);font-size:12.5px;}
+  footer b{color:var(--text-soft);}
+</style>
+</head>
+<body>
+  <div class="doc">
+
+    <div class="head">
+      <div class="k">COO · Morning Brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Sunday, July 19, 2026</div>
+    </div>
+
+    <div class="sec">Today's Schedule</div>
+    <div class="card">
+      <div class="row" style="border-bottom:none;padding:0;">
+        <div class="label"><span class="empty">Nothing on the calendar today — the day is open.</span></div>
+        <span class="status s-green">on track</span>
+      </div>
+    </div>
+
+    <div class="sec">Inbox Priorities</div>
+    <div class="card">
+      <h4>No emails flagged urgent, deadline, or response-needed in the last 24h</h4>
+      <div class="row">
+        <div class="label">
+          <div class="t">Reminder: live "second brain" build session in 24 hours</div>
+          <div class="sub">Danny (danielpaul.ai) · yesterday 9:02 PM · session recap + heads-up for tomorrow's live build</div>
+        </div>
+        <span class="status s-amber">prep</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div class="t">Experian: changes on your credit report</div>
+          <div class="sub">Experian · this morning 6:29 AM · sign in to review what changed</div>
+        </div>
+        <span class="status s-amber">review</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div class="t">Apple receipt: AppleCare+ monthly renewal charged</div>
+          <div class="sub">Apple · yesterday 5:58 PM · confirm the charge is expected</div>
+        </div>
+        <span class="status s-amber">review</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div class="t">Bank of America statement available</div>
+          <div class="sub">BofA · yesterday 9:34 PM · Adv Plus Banking 8747, routine</div>
+        </div>
+        <span class="status s-green">fyi</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text-dim);margin-top:10px;">The other ~30 threads in the last 24h were marketing and newsletter noise (AppSumo, Netflix, Ryanair, Afterpay, etc.) — nothing actionable found.</div>
+    </div>
+
+    <div class="sec">Tasks</div>
+    <div class="card">
+      <div class="row">
+        <div class="label">
+          <div class="t">Update homepage copy</div>
+          <div class="sub">Notion · Tasks · Up next · no due date set</div>
+        </div>
+        <span class="status s-green">no due date</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text-dim);margin-top:10px;">Nothing due today or overdue in Notion.</div>
+    </div>
+
+    <div class="sec">Content Slot</div>
+    <div class="card">
+      <span class="empty">No content calendar entry found for today in Notion.</span>
+    </div>
+
+    <div class="sec">Key Metric</div>
+    <div class="stat">
+      <div class="l">This week's number</div>
+      <div class="n">Not set</div>
+      <div class="note">Pick one number to track this week (revenue, DMs sent, connection requests) and log it here tomorrow.</div>
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. · <b>Purely Personal</b></footer>
+  </div>
+</body>
+</html>
