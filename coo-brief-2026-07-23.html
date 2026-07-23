@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 23 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --bg:#0A0A0A; --card:#151517; --card-border:#232326;
+    --ink:#F5F5F3; --ink-soft:#A6A6AC; --ink-faint:#6B6B72;
+    --good:#22C55E; --warn:#F59E0B; --bad:#EF4444;
+    --r-md:14px; --pill:9999px;
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Rethink Sans',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 35%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin:24px 0 12px;}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r-md);box-shadow:0 1px 2px rgba(0,0,0,.3);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+  .lead{font-size:16px;line-height:1.6;color:var(--ink);}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:15px;border-bottom:1px solid var(--card-border);}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:var(--ink-faint);font-size:13px;width:78px;flex-shrink:0;}
+  .row .label{flex:1;min-width:0;color:var(--ink);}
+  .row .sub{font-size:12px;color:var(--ink-soft);margin-top:1px;}
+  .tagi{font-size:11px;font-weight:700;padding:2px 9px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .t-red{background:rgba(239,68,68,.14);color:var(--bad);}
+  .t-amb{background:rgba(245,158,11,.14);color:var(--warn);}
+  .t-grey{background:rgba(166,166,172,.14);color:var(--ink-soft);}
+  .t-grn{background:rgba(34,197,94,.14);color:var(--good);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r-md);box-shadow:0 1px 2px rgba(0,0,0,.3);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:var(--ink-faint);}
+  .stat .n{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-top:8px;color:var(--ink-soft);}
+  .stat .delta{font-size:13px;color:var(--ink-soft);font-weight:400;margin-top:8px;}
+  .empty{font-size:14px;color:var(--ink-soft);font-style:italic;padding:8px 0;}
+  .note{background:linear-gradient(135deg, #000 0%, color-mix(in srgb,var(--primary) 30%, #000) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.4);border:1px solid var(--card-border);}
+  .note b{color:var(--primary-light);}
+
+  footer{text-align:center;padding:30px 22px 10px;color:var(--ink-faint);font-size:13px;}
+  footer b{color:var(--ink-soft);}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="doc">
+
+    <div class="ohead">
+      <div class="k">COO · Morning brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Thursday, 23 July 2026 · ran while you slept</div>
+    </div>
+
+    <div class="card">
+      <h4>Today, in one line</h4>
+      <div class="lead">Calendar is clear and the inbox is quiet — no fires. The one thing worth a decision: accept or decline tomorrow's 1:00&nbsp;AM PDT Hilversum bootcamp session before it sneaks up on you.</div>
+    </div>
+
+    <div class="sec">Today's Schedule</div>
+    <div class="card" style="border-left-color:var(--good);">
+      <div class="empty">Nothing scheduled today. Protect the space.</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--card-border);">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">Coming up</div>
+        <div class="row">
+          <span class="when">Fri 1:00 AM</span>
+          <div class="label">
+            <div>10X – Hilversum (Bootcamp)</div>
+            <div class="sub">via Zoom · organized by admin@danielpaul.ai · 4 hrs</div>
+          </div>
+          <span class="tagi t-amb">needs RSVP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">Inbox Priorities</div>
+    <div class="card">
+      <h4>Inbox · quiet 24h, nothing on fire</h4>
+      <div class="row">
+        <div class="label">
+          <div>LinkedIn Profile Search actor — pricing change</div>
+          <div class="sub">Apify · the lead-scraping actor you use is repricing</div>
+        </div>
+        <span class="tagi t-amb">review</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Afterpay payment due</div>
+          <div class="sub">$12.50 · due July 26 (3 days)</div>
+        </div>
+        <span class="tagi t-amb">upcoming</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Apify subscription auto-renews</div>
+          <div class="sub">$29.00 · renews July 30 · no action needed</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Google Analytics performance report is in</div>
+          <div class="sub">Covers June 25 – July 22</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Discord: davidh mentioned you</div>
+          <div class="sub">In the Midjourney server</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <div class="sec">Tasks</div>
+        <div class="card">
+          <h4>Notion · due today or overdue</h4>
+          <div class="empty">Nothing due today, nothing overdue. Task board is clear.</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sec">Key Metric</div>
+        <div class="stat">
+          <div class="l">This week's number</div>
+          <div class="n">Not set yet</div>
+          <div class="delta">Pick one number to track this week (revenue, DMs sent, connection requests) and paste it here tomorrow.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">Content Slot</div>
+    <div class="card">
+      <h4>Today's content calendar entry</h4>
+      <div class="empty">No content calendar entry found in Notion for today. Connect or update the content calendar to activate this section.</div>
+    </div>
+
+    <div class="note">
+      One thing to move the needle today: <b>RSVP to the Hilversum bootcamp session.</b> It starts 1:00 AM PDT Friday — decide tonight so it's not a scramble at midnight.
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. · <b>Purely Personal</b></footer>
+  </div>
+</body>
+</html>
