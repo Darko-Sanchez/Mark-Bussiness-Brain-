@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief · July 28 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --bg:#0A0A0A; --card:#151417; --card2:#1B1A1E; --ink:#F4F3F1; --ink-soft:#9B9AA1;
+    --border:#28272C; --border-soft:#201F23;
+    --good:#22C55E; --warn:#F5A524; --bad:#EF4444;
+    --r-md:14px; --r-lg:22px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.45);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:radial-gradient(80% 60% at 96% -12%, color-mix(in srgb,var(--primary) 16%, transparent), transparent 60%), radial-gradient(60% 50% at 0% 6%, color-mix(in srgb,var(--primary-light) 10%, transparent), transparent 55%), var(--bg);background-attachment:fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 38%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:24px 0 12px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
+  .lead{font-size:16px;line-height:1.6;color:var(--ink);}
+  .row{display:flex;align-items:center;gap:10px;padding:10px 0;font-size:15px;border-bottom:1px solid var(--border-soft);}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:var(--ink-soft);font-size:13px;width:76px;flex-shrink:0;}
+  .row .label{flex:1;min-width:0;}
+  .row .label div:first-child{color:var(--ink);}
+  .row .sub{font-size:12px;color:var(--ink-soft);margin-top:2px;}
+  .tagi{font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;flex-shrink:0;}
+  .t-red{background:rgba(239,68,68,.14);color:var(--bad);}
+  .t-amb{background:rgba(245,165,36,.14);color:var(--warn);}
+  .t-grey{background:rgba(155,154,161,.14);color:var(--ink-soft);}
+  .t-grn{background:rgba(34,197,94,.14);color:var(--good);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:var(--ink-soft);}
+  .stat .n{font-size:34px;font-weight:800;letter-spacing:-.02em;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .delta{font-size:13px;font-weight:700;margin-top:2px;} .up{color:var(--good);} .down{color:var(--bad);}
+  .empty{font-size:14px;color:var(--ink-soft);font-style:italic;padding:8px 0;}
+  .note{background:linear-gradient(135deg, #000 0%, color-mix(in srgb,var(--primary) 30%, #000) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.4);border:1px solid var(--border);}
+  .note b{color:var(--primary-light);}
+
+  footer{text-align:center;padding:30px 22px 10px;color:var(--ink-soft);font-size:13px;}
+  footer b{color:var(--ink);}
+
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="doc">
+
+    <!-- HEADER -->
+    <div class="ohead">
+      <div class="k">COO · Morning brief</div>
+      <h1>Good morning, Mark.</h1>
+      <div class="d">Tuesday, 28 July 2026 · ran while you slept</div>
+    </div>
+
+    <!-- ONE LINE -->
+    <div class="card">
+      <h4>Today, in one line</h4>
+      <div class="lead">Calendar is clear and nothing in the inbox needs a reply today &mdash; use the open day to move &ldquo;Update homepage copy&rdquo; forward before Friday&rsquo;s bootcamp session.</div>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="sec">Today&rsquo;s Schedule</div>
+    <div class="card">
+      <h4>Calendar</h4>
+      <div class="empty">Nothing scheduled today. Protect the space.</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border-soft);">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;">Coming up</div>
+        <div class="row">
+          <span class="when">Fri Jul 31</span>
+          <div class="label">
+            <div>10X &ndash; Hilversum (Bootcamp)</div>
+            <div class="sub">1:00 &ndash; 5:00 AM MST · via Zoom</div>
+          </div>
+          <span class="tagi t-grn">confirmed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- INBOX -->
+    <div class="sec">Inbox Priorities</div>
+    <div class="card">
+      <h4>Last 24 hours · 0 need a reply</h4>
+      <div class="empty">No emails flagged urgent, deadline, or response-needed in the last 24 hours &mdash; inbox was mostly newsletters and offers. Worth a glance:</div>
+      <div class="row">
+        <div class="label">
+          <div>Your monthly account statement is here</div>
+          <div class="sub">Experian · credit rating summary, 1 new notification</div>
+        </div>
+        <span class="tagi t-amb">review</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Your receipt from Apple</div>
+          <div class="sub">Order MNMTHS2H2W · confirm the charge is yours</div>
+        </div>
+        <span class="tagi t-amb">review</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Expert Sessions starting soon</div>
+          <div class="sub">Louise Brogan · July Expert Sessions began 2:00 PM today, recording to follow</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>Full Moon Messages, tonight 6&ndash;9 PM</div>
+          <div class="sub">salvatoreascend · community event, no action needed</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+      <div class="row">
+        <div class="label">
+          <div>&ldquo;Mark, we&rsquo;re live right now&rdquo;</div>
+          <div class="sub">Richmond Dinh · course-launch funnel email, no reply expected</div>
+        </div>
+        <span class="tagi t-grey">fyi</span>
+      </div>
+    </div>
+
+    <!-- TASKS + METRIC GRID -->
+    <div class="sec">Tasks &amp; Metric</div>
+    <div class="grid2">
+
+      <div class="card">
+        <h4>Tasks</h4>
+        <div class="row">
+          <div class="label">
+            <div>Update homepage copy</div>
+            <div class="sub">Website Redesign · up next, no due date set</div>
+          </div>
+          <span class="tagi t-amb">up next</span>
+        </div>
+        <div style="font-size:12px;color:var(--ink-soft);margin-top:10px;">Nothing due today or overdue in Notion right now.</div>
+      </div>
+
+      <div class="stat">
+        <div class="l">Key metric</div>
+        <div class="n" style="font-size:22px;margin-top:8px;color:var(--ink-soft);-webkit-background-clip:unset;background-clip:unset;background:none;">Not set yet</div>
+        <div class="delta" style="color:var(--ink-soft);font-weight:400;font-size:13px;margin-top:8px;">Set one number to track this week (revenue, DMs sent, connection requests) and paste it here tomorrow morning.</div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="sec">Content Slot</div>
+    <div class="card">
+      <h4>Today&rsquo;s content</h4>
+      <div class="empty">No content calendar entry found for today. Connect or populate a Notion content calendar to activate this section.</div>
+    </div>
+
+    <!-- CLOSING NOTE -->
+    <div class="note">
+      One thing to move the needle today: <b>use the open calendar to push &ldquo;Update homepage copy&rdquo; to done.</b> Nothing else in this brief is time-sensitive &mdash; the inbox can wait and the next commitment isn&rsquo;t until Friday&rsquo;s bootcamp session.
+    </div>
+
+    <footer>The brain thinks. The team works. You approve. · <b>Built by Daniel Paul · Purely Personal</b></footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('load',function(){
+      if(!window.gsap)return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.ohead',{y:26,opacity:0,scale:.98,duration:.7,ease:'power3.out'});
+      gsap.from('.ohead h1',{y:14,opacity:0,duration:.7,delay:.12,ease:'power3.out'});
+      gsap.from('.card,.stat,.note',{y:20,opacity:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.doc',start:'top 85%'}});
+    });
+  </script>
+</body>
+</html>
