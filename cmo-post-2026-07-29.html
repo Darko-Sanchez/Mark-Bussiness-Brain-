@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMO Daily Post · July 29, 2026 · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#030E33; --primary-light:#5B627A;            /* STEP 0 sets these, Mark Sanchez brand navy */
+    --black:#0A0A0A; --ink:#15151A; --white:#FFFFFF; --off-white:#F8F7F5;
+    --gray:#E4E3E0; --gray-text:#5b5b62; --gray-light:#F2F1EE;
+    --good:#16A34A; --warn:#D97706; --bad:#DC2626;
+    --r-md:14px; --r-lg:22px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:radial-gradient(80% 60% at 96% -12%, color-mix(in srgb,var(--primary) 14%, transparent), transparent 60%), radial-gradient(60% 50% at 0% 6%, color-mix(in srgb,var(--primary-light) 10%, transparent), transparent 55%), var(--off-white);background-attachment:fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 30%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.82;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-text);font-weight:700;margin:24px 0 12px;}
+  .card{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);margin-bottom:12px;}
+  .lead{font-size:16px;}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:15px;border-bottom:1px solid var(--gray-light);}
+  .row:last-child{border-bottom:none;}
+  .row .when{color:var(--gray-text);font-size:13px;width:74px;flex-shrink:0;}
+  .tagi{font-size:11px;font-weight:700;padding:2px 9px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;}
+  .t-red{background:#fdecec;color:var(--bad);} .t-amb{background:#fdf1de;color:var(--warn);}
+  .t-grey{background:var(--gray-light);color:var(--gray-text);} .t-grn{background:#e7f6ee;color:var(--good);} .t-blue{background:#e6f0fc;color:#1E6FE0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .stat{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:var(--gray-text);} .stat .n{font-size:34px;font-weight:800;letter-spacing:-.02em;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .delta{font-size:13px;font-weight:700;margin-top:2px;} .up{color:var(--good);} .down{color:var(--bad);}
+  .bar{height:14px;border-radius:var(--pill);background:var(--gray-light);overflow:hidden;margin-top:10px;}
+  .bar i{display:block;height:100%;width:0;border-radius:var(--pill);background:linear-gradient(90deg,var(--primary),var(--primary-light));}
+  .note{background:linear-gradient(135deg, var(--ink) 0%, color-mix(in srgb,var(--primary) 26%, var(--ink)) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.16);}
+  .note b{color:var(--primary-light);}
+  .qbox{width:100%;border:1px dashed var(--gray);border-radius:10px;padding:12px;font-family:inherit;font-size:14px;color:var(--gray-text);background:#fff;margin-top:8px;}
+
+  .lipost{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:20px;}
+  .lihead{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .av{width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;}
+  .lihead .nm{font-weight:700;font-size:15px;} .lihead .mt{font-size:12px;color:var(--gray-text);}
+  .lipost .post{font-size:15px;line-height:1.6;white-space:pre-line;}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .chip{font-size:12px;font-weight:600;background:var(--gray-light);color:var(--gray-text);padding:5px 11px;border-radius:var(--pill);}
+  .score{display:inline-flex;align-items:center;gap:8px;background:#e7f6ee;color:var(--good);font-weight:700;font-size:13px;padding:6px 13px;border-radius:var(--pill);}
+
+  footer{text-align:center;padding:30px 22px 10px;color:var(--gray-text);font-size:13px;}
+  footer b{color:var(--ink);}
+
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body data-theme="standard">
+  <div class="doc">
+
+    <div class="ohead"><div class="k">CMO · Daily post</div><h1>Today's post, in your voice</h1><div class="d">Pillar: Framework / Method · scored and scrubbed</div></div>
+
+    <div class="card">
+      <h4>Today's content slot</h4>
+      <div>Pulled from the Unforgettable Hospitality content calendar (Notion, Content Library, Day 29 of the 35-day campaign, Status: Queued, next up to publish).<br>
+      <b>Pillar:</b> Framework / Method &nbsp;·&nbsp; <b>Topic:</b> 346 reviews sorted this month, one line explains the whole pattern: guests don't rate stars, they rate feeling seen &nbsp;·&nbsp; <b>Format:</b> Photo/Text &nbsp;·&nbsp; <b>Intent:</b> Educating (soft CTA to the free review audit)</div>
+    </div>
+
+    <div class="sec">Hooks, 346 reviews, one sentence</div>
+    <div class="card">
+      <div class="row">Result Lead: 346 reviews sorted this month. One sentence explains all of them.</div>
+      <div class="row">Confession: I almost missed the pattern hiding in 346 five star reviews.</div>
+      <div class="row">Contrarian: Your star rating means less than you think it does.</div>
+      <div class="row">Curiosity Gap: 346 reviews later, one word kept showing up more than food.</div>
+      <div class="row">Pattern Interrupt: Five stars said nothing. Two sentences said everything.<span class="tagi t-grn">chosen</span></div>
+    </div>
+    <div class="card" style="border-left-color:var(--primary-light)">
+      <h4>Why this one</h4>
+      <div>Pattern Interrupt wins because it breaks the assumption that five stars means the job is done, mirrors Mark's short-declaration doubling rhythm, and holds back the actual insight for the body instead of giving it away in the hook.</div>
+    </div>
+
+    <div class="sec">The post</div>
+    <div class="lipost">
+      <div class="lihead"><div class="av">MS</div><div><div class="nm">Mark Sanchez · 1st</div><div class="mt">Founder, Unforgettable Hospitality · Floor-Level Hospitality Consultant · now</div></div></div>
+      <div class="post">Five stars said nothing. Two sentences said everything.
+
+I sorted 346 reviews this month. Restaurants near me, real guests, real words, not survey data.
+
+Most owners check the star average and stop there. Four point eight, four point nine, good enough, on to the next thing on the list.
+
+I kept reading past the number. Every review got sorted into one of four piles: silent on service, generic, specific, or emotional and named.
+
+A five star review with no name, no detail, no moment mentioned, that guest was fine. Fine isn't the same as won over.
+
+Another five star, same rating, two rows down. Named the server. Named a dish. Said she'd be back Friday.
+
+Same star rating. Two completely different rooms.
+
+The rating never told me which restaurant I was actually looking at. The words did.
+
+346 reviews down to one sentence: guests don't care about your star rating. They care about being seen, and they'll tell you straight out when they were, if you read past the number.
+
+Go pull your last twenty five stars. Sort them into two piles, named something specific, or didn't. Whichever pile is bigger is the real answer about your restaurant right now.
+
+Most owners have never once read their reviews this way.
+
+DM me FLOOR and I'll run that sort for you. Free. No charge, no pitch buried in it.
+
+P.S. 346 reviews taught me one thing stars never will.</div>
+      <div class="chips"><span class="chip">1,353 chars</span><span class="chip">Hook: Pattern Interrupt</span><span class="chip">No em dashes</span><span class="chip">Variation B, Story-Flow, Educating</span></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card"><h4>Hook options</h4>
+        <div class="row">Five stars said nothing. Two sentences said everything.<span class="tagi t-grn">chosen</span></div>
+        <div class="row">346 reviews sorted this month. One sentence explains all of them.</div>
+        <div class="row">Your star rating means less than you think it does.</div>
+      </div>
+      <div class="card"><h4>Publish check</h4>
+        <div class="row">Stops the scroll<span class="tagi t-grn">✓</span></div>
+        <div class="row">Matches Voice DNA<span class="tagi t-grn">✓</span></div>
+        <div class="row">Specific ask<span class="tagi t-grn">✓</span></div>
+        <div class="row">Zero banned words<span class="tagi t-grn">✓</span></div>
+      </div>
+    </div>
+
+    <div class="sec">Pinned comment options</div>
+    <div class="card">
+      <div class="row"><b>Extend&nbsp;</b>&nbsp;The two piles in this post are really four once you go deeper: silent, generic, specific, emotional and named. Most five stars land in the first two. That's the gap nobody's measuring.</div>
+      <div class="row"><b>Humanise&nbsp;</b>&nbsp;Half of these got read at 1am with cold coffee next to me. Still faster than sorting them by hand used to be.</div>
+      <div class="row"><b>CTA Amplifier&nbsp;</b>&nbsp;Serious about it, send your Google Business link with FLOOR. I'll pull your last fifty and tell you exactly which pile you're sitting in.</div>
+    </div>
+
+    <div style="text-align:center;margin-top:8px"><span class="score">Invisibility Diagnostic: 4 / 4</span></div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="card"><h4>Voice · 1/1</h4><div style="font-size:14px;color:var(--gray-text)">Short declarations, doubling rhythm ("Fine isn't the same as won over," "Same star rating. Two completely different rooms."), plain grade 7-8 language. Reads as Mark, not a generic marketer.</div></div>
+      <div class="card"><h4>POV · 1/1</h4><div style="font-size:14px;color:var(--gray-text)">Clear stance: star ratings are a bad diagnostic, guest language is the real signal. Not a balanced "both sides" take.</div></div>
+      <div class="card"><h4>Specificity · 1/1</h4><div style="font-size:14px;color:var(--gray-text)">346 reviews, "four point eight, four point nine," "back Friday," the four-pattern sort, "DM me FLOOR." Nothing generic enough to apply to anyone.</div></div>
+      <div class="card"><h4>Asking · 1/1</h4><div style="font-size:14px;color:var(--gray-text)">Two asks stacked cleanly: sort your own reviews, then DM FLOOR for the free audit. One clear CTA in the post itself.</div></div>
+    </div>
+
+    <div class="note">This post is a draft for your approval. Nothing has been posted or sent. Source: Notion Content Library, Day 29 of the 35-day campaign (Status: Queued). Brand color pulled from <b>positioning/brand docs, #030E33</b> navy, no hex was found directly in positioning-mark-sanchez.md, so this was sourced from the Business Inbox visual identity section instead of the #E8294C fallback.</div>
+
+  </div>
+  <footer>The brain thinks. The team works. You approve. · <b>Built by Daniel Paul · Purely Personal</b></footer>
+</body>
+</html>
